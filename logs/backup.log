@@ -40,3 +40,9 @@ Backup Summary for erp-next.localhost at 2025-10-31 17:30:03.799320
 Config  : /home/ghild/erp-next/sites/erp-next.localhost/private/backups/20251031_173002-erp-next_localhost-site_config_backup.json 194.0B
 Database: /home/ghild/erp-next/sites/erp-next.localhost/private/backups/20251031_173002-erp-next_localhost-database.sql.gz 886.2KiB
 Backup for Site erp-next.localhost has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_499a4a30007070b4 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _499a4a30007070b4 | /usr/bin/gzip >> ./erp-next.localhost/private/backups/20251103_113008-erp-next_localhost-database.sql.gz
+
+Backup Summary for erp-next.localhost at 2025-11-03 11:30:10.038706
+Config  : /home/ghild/erp-next/sites/erp-next.localhost/private/backups/20251103_113008-erp-next_localhost-site_config_backup.json 194.0B
+Database: /home/ghild/erp-next/sites/erp-next.localhost/private/backups/20251103_113008-erp-next_localhost-database.sql.gz 899.1KiB
+Backup for Site erp-next.localhost has been successfully completed

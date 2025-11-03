@@ -226,3 +226,4 @@
 2025-11-03 01:14:40,262 INFO /home/ghild/.local/bin/bench schedule
 2025-11-03 01:14:40,265 INFO /home/ghild/.local/bin/bench worker
 2025-11-03 01:14:40,266 INFO /home/ghild/.local/bin/bench watch
+2025-11-03 06:00:07,580 INFO /home/ghild/.local/bin/bench --verbose --site all backup
