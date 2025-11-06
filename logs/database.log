@@ -2592,3 +2592,105 @@ ALTER TABLE `tabTest Request` ADD COLUMN `centre` varchar(140), ADD COLUMN `samp
 ALTER TABLE `tabTest Request` ADD COLUMN `test_type` varchar(140)
 2025-11-03 04:22:06,129 WARNING database DDL Query made to DB:
 ALTER TABLE `tabTest Request` ADD COLUMN `scheduled_test_date` date, ADD COLUMN `assigned_to` varchar(140), ADD COLUMN `test_completed_date` date, ADD COLUMN `test_result` varchar(140), ADD COLUMN `result_notes` longtext, ADD COLUMN `report_pdf` text, ADD COLUMN `status` varchar(140) DEFAULT 'Requested', ADD COLUMN `cancellation_reason` text
+2025-11-03 07:39:02,373 WARNING database DDL Query made to DB:
+create table `tabSupport Case` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-11-03 09:35:48,523 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSupport Case` ADD COLUMN `client_company` varchar(140), ADD COLUMN `centre` varchar(140), ADD COLUMN `contact_person` varchar(140), ADD COLUMN `contact_number` varchar(140), ADD COLUMN `email` varchar(140), ADD COLUMN `case_description` longtext, ADD COLUMN `requested_date` date, ADD COLUMN `industry_sector` varchar(140), ADD COLUMN `assigned_faculty` varchar(140), ADD COLUMN `expected_delivery_date` date, ADD COLUMN `actual_delivery_date` date, ADD COLUMN `priority` varchar(140) DEFAULT 'Medium', ADD COLUMN `work_notes` longtext, ADD COLUMN `billable` tinyint(4) NOT NULL DEFAULT 0, ADD COLUMN `amount` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `invoice_number` varchar(140), ADD COLUMN `invoice_date` date, ADD COLUMN `payment_status` varchar(140), ADD COLUMN `status` varchar(140) DEFAULT 'Intake', ADD COLUMN `text_editor` longtext, ADD COLUMN `closure_date` date, ADD COLUMN `client_feedback` longtext, ADD COLUMN `rating` varchar(140)
+2025-11-03 21:28:29,017 WARNING database DDL Query made to DB:
+create table `tabSanction` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-11-03 21:39:56,370 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSanction` ADD COLUMN `scheme` varchar(140), ADD COLUMN `centre` varchar(140), ADD COLUMN `sanction_order_number` varchar(140), ADD COLUMN `sanction_date` date, ADD COLUMN `amount_sanctioned` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `sanctioning_authority` varchar(140), ADD COLUMN `purpose` longtext, ADD COLUMN `amount_utilized` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `balance_amount` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `utilization_percentage` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `utilization_details` longtext, ADD COLUMN `status` varchar(140) DEFAULT 'Sanctioned', ADD COLUMN `remarks` longtext
+2025-11-04 02:04:07,834 WARNING database DDL Query made to DB:
+create table `tabAssets` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-11-04 02:20:34,289 WARNING database DDL Query made to DB:
+ALTER TABLE `tabAssets` ADD COLUMN `asset_name` varchar(140), ADD COLUMN `asset_code` varchar(140), ADD COLUMN `centre` varchar(140), ADD COLUMN `asset_category` varchar(140), ADD COLUMN `description` longtext, ADD COLUMN `purchase_date` date, ADD COLUMN `purchase_cost` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `supplier` varchar(140), ADD COLUMN `status` varchar(140) DEFAULT 'Active', ADD COLUMN `current_location` varchar(140), ADD COLUMN `assigned_to` varchar(140), ADD COLUMN `condition` varchar(140) DEFAULT 'Good', ADD COLUMN `remarks` longtext
+2025-11-04 02:32:49,976 WARNING database DDL Query made to DB:
+RENAME TABLE `tabAssets` TO `tabAssetsDetails`
+2025-11-04 03:13:26,931 WARNING database DDL Query made to DB:
+create table `tabItems` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-11-04 04:21:23,655 WARNING database DDL Query made to DB:
+ALTER TABLE `tabItems` ADD COLUMN `item_name` varchar(140), ADD COLUMN `item_code` varchar(140), ADD COLUMN `item_category` varchar(140), ADD COLUMN `description` text, ADD COLUMN `unit_of_measure` varchar(140), ADD COLUMN `current_stock` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `minimum_stock_level` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `centre` varchar(140), ADD COLUMN `status` varchar(140) DEFAULT 'Active'
+2025-11-06 02:18:00,692 WARNING database DDL Query made to DB:
+create table `tabStock Movement` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-11-06 02:26:04,395 WARNING database DDL Query made to DB:
+ALTER TABLE `tabStock Movement` ADD COLUMN `item` varchar(140), ADD COLUMN `from_centre` varchar(140), ADD COLUMN `to_centre` varchar(140), ADD COLUMN `quantity` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `movement_type` varchar(140), ADD COLUMN `movement_date` date, ADD COLUMN `reason__reference` text, ADD COLUMN `performed_by` varchar(140)
