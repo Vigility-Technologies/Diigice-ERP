@@ -315,3 +315,30 @@
 2025-11-07 11:35:17,230 INFO /home/ghild/.local/bin/bench schedule
 2025-11-07 11:35:17,234 INFO /home/ghild/.local/bin/bench worker
 2025-11-07 11:35:22,142 INFO /home/ghild/.local/bin/bench migrate
+2025-11-07 12:00:04,910 INFO /home/ghild/.local/bin/bench --verbose --site all backup
+2025-11-07 13:51:14,702 INFO /home/ghild/.local/bin/bench --site site1.local backup
+2025-11-07 13:53:06,177 INFO /home/ghild/.local/bin/bench --site erp-next.localhost backup
+2025-11-07 14:02:05,454 INFO /home/ghild/.local/bin/bench --site site1.local set-config developer_mode 1
+2025-11-07 14:02:36,348 INFO /home/ghild/.local/bin/bench --site erp-next.localhost set-config developer_mode 1
+2025-11-07 14:03:00,515 INFO /home/ghild/.local/bin/bench restart
+2025-11-07 14:03:00,861 INFO A newer version of bench is available: 5.25.11 → 5.27.0
+2025-11-07 14:04:45,871 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-customizations
+2025-11-07 14:27:00,396 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-fixtures
+2025-11-07 14:30:02,748 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-fixtures
+2025-11-07 14:34:09,439 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-fixtures
+2025-11-07 16:31:29,125 INFO /home/ghild/.local/bin/bench start
+2025-11-07 16:31:29,390 INFO /home/ghild/.local/bin/bench schedule
+2025-11-07 16:31:29,390 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-07 16:31:29,402 INFO /home/ghild/.local/bin/bench watch
+2025-11-07 16:31:29,407 INFO /home/ghild/.local/bin/bench worker
+2025-11-07 16:36:30,386 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Faculty
+2025-11-07 16:38:03,279 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Faculty apps/erpnext/erpnext/support/doctype/faculty/faculty.json
+2025-11-07 16:42:12,693 INFO /home/ghild/.local/bin/bench --site erp-next.localhost backup
+2025-11-07 16:42:42,579 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Faculty apps/erpnext/erpnext/support/doctype/faculty/faculty.json
+2025-11-07 16:43:35,234 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Faculty apps/erpnext/erpnext/support/doctype/faculty/faculty.json
+2025-11-07 16:43:36,119 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Employees Master apps/erpnext/erpnext/support/doctype/employees_master/employees_master.json
+2025-11-07 16:43:37,046 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Enterprise Facilitation Center apps/erpnext/erpnext/support/doctype/enterprise_facilitation_center/enterprise_facilitation_center.json
+2025-11-07 16:43:38,080 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Schemes apps/erpnext/erpnext/support/doctype/schemes/schemes.json
+2025-11-07 16:43:39,016 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Extension Center apps/erpnext/erpnext/support/doctype/extension_center/extension_center.json
+2025-11-07 16:43:39,963 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Branch Master apps/erpnext/erpnext/support/doctype/branch_master/branch_master.json
+2025-11-07 16:43:40,905 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Head Office Master apps/erpnext/erpnext/support/doctype/head_office_master/head_office_master.json

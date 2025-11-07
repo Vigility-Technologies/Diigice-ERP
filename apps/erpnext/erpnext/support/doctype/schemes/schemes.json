@@ -1,0 +1,26 @@
+[
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Schemes",
+  "end_date": null,
+  "modified": "2025-11-07 14:58:16.856985",
+  "name": "XYZ007",
+  "scheme_code": "XYZ007",
+  "scheme_name": "xyz",
+  "start_date": null,
+  "status": "Active"
+ },
+ {
+  "description": "dgmskpdhm;sx;nd;m",
+  "docstatus": 0,
+  "doctype": "Schemes",
+  "end_date": null,
+  "modified": "2025-11-07 16:15:15.997918",
+  "name": "t4533",
+  "scheme_code": "t4533",
+  "scheme_name": "ttttt",
+  "start_date": "1-11-2025",
+  "status": "Active"
+ }
+]

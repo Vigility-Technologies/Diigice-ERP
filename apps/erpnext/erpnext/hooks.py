@@ -667,3 +667,4 @@ fields_for_group_similar_items = ["qty", "amount"]
 #     "Custom DocType"
 # ]
 
+fixtures = ["Custom Field", "Property Setter"]
