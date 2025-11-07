@@ -1,11 +1,13 @@
 [
+    "tabNavbar",
+    "tabTag",
+    "tabPortal",
+    "tabPortal Menu Item",
+    "tabCustom",
+    "tabInstalled",
     "tabCustom Field",
     "tabInstalled Application",
+    "tabTag Link",
     "tabSingles",
-    "tabPortal",
-    "tabNavbar Item",
-    "tabNavbar",
-    "tabInstalled",
-    "tabCustom",
-    "tabPortal Menu Item"
+    "tabNavbar Item"
 ]

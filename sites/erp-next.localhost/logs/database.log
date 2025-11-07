@@ -2694,3 +2694,25 @@ index creation(creation))
 			COLLATE=utf8mb4_unicode_ci
 2025-11-06 02:26:04,395 WARNING database DDL Query made to DB:
 ALTER TABLE `tabStock Movement` ADD COLUMN `item` varchar(140), ADD COLUMN `from_centre` varchar(140), ADD COLUMN `to_centre` varchar(140), ADD COLUMN `quantity` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `movement_type` varchar(140), ADD COLUMN `movement_date` date, ADD COLUMN `reason__reference` text, ADD COLUMN `performed_by` varchar(140)
+2025-11-07 02:15:07,691 WARNING database DDL Query made to DB:
+create table `tabInvoice` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-11-07 02:36:48,772 WARNING database DDL Query made to DB:
+RENAME TABLE `tabInvoice` TO `tabInvoices`
+2025-11-07 02:44:17,902 WARNING database DDL Query made to DB:
+ALTER TABLE `tabInvoices` ADD COLUMN `module_source` varchar(140), ADD COLUMN `reference_id` varchar(140), ADD COLUMN `centre` varchar(140), ADD COLUMN `customer_name` varchar(140), ADD COLUMN `customer_contact` varchar(140), ADD COLUMN `customer_email` varchar(140), ADD COLUMN `base_amount` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `gst_rate` decimal(21,9) NOT NULL DEFAULT 18.0, ADD COLUMN `gst_amount` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `tds_rate` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `tds_amount` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `total_amount` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `payment_status` varchar(140) DEFAULT 'Draft', ADD COLUMN `payment_date` date, ADD COLUMN `payment_method` varchar(140), ADD COLUMN `remarks` longtext

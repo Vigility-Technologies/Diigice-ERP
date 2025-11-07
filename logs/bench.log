@@ -249,3 +249,69 @@
 2025-11-06 02:16:45,716 INFO /home/ghild/.local/bin/bench watch
 2025-11-06 02:16:45,722 INFO /home/ghild/.local/bin/bench serve --port 8001
 2025-11-06 02:16:45,725 INFO /home/ghild/.local/bin/bench worker
+2025-11-06 04:53:02,950 INFO /home/ghild/.local/bin/bench start
+2025-11-06 04:53:03,207 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-06 04:53:03,215 INFO /home/ghild/.local/bin/bench worker
+2025-11-06 04:53:03,215 INFO /home/ghild/.local/bin/bench schedule
+2025-11-06 04:53:03,216 INFO /home/ghild/.local/bin/bench watch
+2025-11-07 02:11:05,225 INFO /home/ghild/.local/bin/bench start
+2025-11-07 02:11:05,532 INFO /home/ghild/.local/bin/bench worker
+2025-11-07 02:11:05,536 INFO /home/ghild/.local/bin/bench watch
+2025-11-07 02:11:05,552 INFO /home/ghild/.local/bin/bench schedule
+2025-11-07 02:11:05,555 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-07 02:11:45,101 INFO /home/ghild/.local/bin/bench start
+2025-11-07 02:11:45,339 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-07 02:11:45,357 INFO /home/ghild/.local/bin/bench watch
+2025-11-07 02:11:45,360 INFO /home/ghild/.local/bin/bench schedule
+2025-11-07 02:11:45,367 INFO /home/ghild/.local/bin/bench worker
+2025-11-07 04:11:15,463 INFO /home/ghild/.local/bin/bench start
+2025-11-07 04:11:16,044 INFO /home/ghild/.local/bin/bench schedule
+2025-11-07 04:11:16,049 INFO /home/ghild/.local/bin/bench watch
+2025-11-07 04:11:16,058 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-07 04:11:16,100 INFO /home/ghild/.local/bin/bench worker
+2025-11-07 06:00:03,579 INFO /home/ghild/.local/bin/bench --verbose --site all backup
+2025-11-07 06:02:52,624 INFO /home/ghild/.local/bin/bench start
+2025-11-07 06:02:53,270 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-07 06:02:53,277 INFO /home/ghild/.local/bin/bench watch
+2025-11-07 06:02:53,278 INFO /home/ghild/.local/bin/bench worker
+2025-11-07 06:02:53,305 INFO /home/ghild/.local/bin/bench schedule
+2025-11-07 06:07:02,517 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-fixtures
+2025-11-07 06:35:35,645 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-fixtures --include Assets Details,Stock Movement,Invoices
+2025-11-07 06:36:51,600 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-fixtures --only Assets Details Stock Movement Invoices
+2025-11-07 06:38:41,405 INFO /home/ghild/.local/bin/bench --site erp-next.localhost execute frappe.modules.export_module.export_fixtures --kwargs {"app": "erpnext", "doctype": "Assets Details"}
+2025-11-07 06:38:53,343 INFO /home/ghild/.local/bin/bench --site erp-next.localhost execute frappe.modules.export_module.export_fixtures --kwargs {"app": "erpnext", "doctype": "Assets Details"}
+2025-11-07 06:39:46,945 INFO /home/ghild/.local/bin/bench --site erp-next.localhost execute frappe.core.doctype.data_import.fixtures.export_customizations --kwargs {"doctype": "Assets Details"}
+2025-11-07 08:34:49,576 INFO /home/ghild/.local/bin/bench export-fixtures
+2025-11-07 08:38:59,956 INFO /home/ghild/.local/bin/bench export-fixtures
+2025-11-07 08:39:19,439 INFO /home/ghild/.local/bin/bench export-fixtures
+2025-11-07 08:43:46,632 INFO /home/ghild/.local/bin/bench export-fixtures
+2025-11-07 08:45:45,115 INFO /home/ghild/.local/bin/bench export-fixtures
+2025-11-07 08:49:08,183 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-docs
+2025-11-07 09:21:15,328 INFO /home/ghild/.local/bin/bench --site erp-next.localhost clear-cache
+2025-11-07 09:21:40,947 INFO /home/ghild/.local/bin/bench --site erp-next.localhost migrate
+2025-11-07 10:04:38,095 INFO /home/ghild/.local/bin/bench export-fixtures --app erpnext
+2025-11-07 10:19:08,379 INFO /home/ghild/.local/bin/bench --site erp-next.localhost clear-cache
+2025-11-07 10:19:24,829 INFO /home/ghild/.local/bin/bench --site erp-next.localhost migrate
+2025-11-07 10:49:58,532 INFO /home/ghild/.local/bin/bench --site erp-next.localhost version
+2025-11-07 11:09:10,575 INFO /home/ghild/.local/bin/bench set-config developer_mode 1
+2025-11-07 11:09:11,140 INFO /home/ghild/.local/bin/bench restart
+2025-11-07 11:09:11,291 INFO A newer version of bench is available: 5.25.11 → 5.27.0
+2025-11-07 11:22:18,767 INFO /home/ghild/.local/bin/bench set-config developer_mode 1
+2025-11-07 11:22:39,910 INFO /home/ghild/.local/bin/bench restart
+2025-11-07 11:22:40,069 INFO A newer version of bench is available: 5.25.11 → 5.27.0
+2025-11-07 11:33:43,994 INFO /home/ghild/.local/bin/bench update
+2025-11-07 11:33:44,027 WARNING /home/ghild/.local/bin/bench update executed with exit code 1
+2025-11-07 11:33:44,162 INFO A newer version of bench is available: 5.25.11 → 5.27.0
+2025-11-07 11:34:02,522 INFO /home/ghild/.local/bin/bench update
+2025-11-07 11:34:02,548 WARNING /home/ghild/.local/bin/bench update executed with exit code 1
+2025-11-07 11:34:02,652 INFO A newer version of bench is available: 5.25.11 → 5.27.0
+2025-11-07 11:34:39,377 INFO /home/ghild/.local/bin/bench update
+2025-11-07 11:34:39,406 WARNING /home/ghild/.local/bin/bench update executed with exit code 1
+2025-11-07 11:34:39,505 INFO A newer version of bench is available: 5.25.11 → 5.27.0
+2025-11-07 11:35:08,685 INFO /home/ghild/.local/bin/bench migrate
+2025-11-07 11:35:17,001 INFO /home/ghild/.local/bin/bench start
+2025-11-07 11:35:17,223 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-07 11:35:17,224 INFO /home/ghild/.local/bin/bench watch
+2025-11-07 11:35:17,230 INFO /home/ghild/.local/bin/bench schedule
+2025-11-07 11:35:17,234 INFO /home/ghild/.local/bin/bench worker
+2025-11-07 11:35:22,142 INFO /home/ghild/.local/bin/bench migrate
