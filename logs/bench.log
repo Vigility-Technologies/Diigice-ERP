@@ -342,3 +342,25 @@
 2025-11-07 16:43:39,016 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Extension Center apps/erpnext/erpnext/support/doctype/extension_center/extension_center.json
 2025-11-07 16:43:39,963 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Branch Master apps/erpnext/erpnext/support/doctype/branch_master/branch_master.json
 2025-11-07 16:43:40,905 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Head Office Master apps/erpnext/erpnext/support/doctype/head_office_master/head_office_master.json
+2025-11-07 18:00:05,522 INFO /home/ghild/.local/bin/bench --verbose --site all backup
+2025-11-09 15:56:47,640 INFO /home/ghild/.local/bin/bench start
+2025-11-09 15:56:47,945 INFO /home/ghild/.local/bin/bench schedule
+2025-11-09 15:56:47,948 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-09 15:56:47,957 INFO /home/ghild/.local/bin/bench watch
+2025-11-09 15:56:47,958 INFO /home/ghild/.local/bin/bench worker
+2025-11-10 00:58:22,454 INFO /home/ghild/.local/bin/bench start
+2025-11-10 00:58:22,779 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-10 00:58:22,781 INFO /home/ghild/.local/bin/bench worker
+2025-11-10 00:58:22,784 INFO /home/ghild/.local/bin/bench schedule
+2025-11-10 00:58:22,797 INFO /home/ghild/.local/bin/bench watch
+2025-11-10 01:49:57,351 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Job Work apps/erpnext/erpnext/quality_management/doctype/job_work/job_work.json
+2025-11-10 01:49:58,744 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Trainee apps/erpnext/erpnext/quality_management/doctype/trainee/trainee.json
+2025-11-10 01:49:59,630 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Training Session apps/erpnext/erpnext/quality_management/doctype/training_session/training_session.json
+2025-11-10 01:50:03,460 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Training Program apps/erpnext/erpnext/quality_management/doctype/training_program/training_program.json
+2025-11-10 01:50:04,406 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Invoices apps/erpnext/erpnext/quality_management/doctype/invoices/invoices.json
+2025-11-10 01:50:05,318 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Stock Movement apps/erpnext/erpnext/quality_management/doctype/stock_movement/stock_movement.json
+2025-11-10 01:50:06,197 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Items apps/erpnext/erpnext/quality_management/doctype/items/items.json
+2025-11-10 01:50:07,082 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json AssetsDetails apps/erpnext/erpnext/quality_management/doctype/assetsdetails/assetsdetails.json
+2025-11-10 01:50:07,978 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Sanction apps/erpnext/erpnext/quality_management/doctype/sanction/sanction.json
+2025-11-10 01:50:08,885 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Support Case apps/erpnext/erpnext/quality_management/doctype/support_case/support_case.json
+2025-11-10 01:50:09,816 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Test Request apps/erpnext/erpnext/quality_management/doctype/test_request/test_request.json

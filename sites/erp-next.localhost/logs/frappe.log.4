@@ -1,0 +1,602 @@
+2025-10-27 12:54:52,904 ERROR frappe Unable to load translations
+Site: erp-next.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 1040, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 881, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+            ^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 190, in get_translations_from_apps
+    translations.update(get_translations_from_csv(lang, app) or {})
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 202, in get_translations_from_csv
+    os.path.join(frappe.get_app_path(app, "translations"), lang + ".csv"), lang, app
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+2025-10-27 12:54:52,906 ERROR frappe Unable to load translations
+Site: erp-next.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 1040, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 881, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+            ^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 190, in get_translations_from_apps
+    translations.update(get_translations_from_csv(lang, app) or {})
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 202, in get_translations_from_csv
+    os.path.join(frappe.get_app_path(app, "translations"), lang + ".csv"), lang, app
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+2025-10-27 12:55:05,901 ERROR frappe Unable to load translations
+Site: erp-next.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 1040, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 881, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+            ^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 190, in get_translations_from_apps
+    translations.update(get_translations_from_csv(lang, app) or {})
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 202, in get_translations_from_csv
+    os.path.join(frappe.get_app_path(app, "translations"), lang + ".csv"), lang, app
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+2025-10-27 12:55:05,902 ERROR frappe Unable to load translations
+Site: erp-next.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 1040, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 881, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+            ^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 190, in get_translations_from_apps
+    translations.update(get_translations_from_csv(lang, app) or {})
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 202, in get_translations_from_csv
+    os.path.join(frappe.get_app_path(app, "translations"), lang + ".csv"), lang, app
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+2025-10-27 12:55:53,400 ERROR frappe Unable to load translations
+Site: erp-next.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 1040, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 881, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+            ^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 190, in get_translations_from_apps
+    translations.update(get_translations_from_csv(lang, app) or {})
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 202, in get_translations_from_csv
+    os.path.join(frappe.get_app_path(app, "translations"), lang + ".csv"), lang, app
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+2025-10-27 12:55:53,402 ERROR frappe Unable to load translations
+Site: erp-next.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 1040, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 881, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+            ^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 190, in get_translations_from_apps
+    translations.update(get_translations_from_csv(lang, app) or {})
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 202, in get_translations_from_csv
+    os.path.join(frappe.get_app_path(app, "translations"), lang + ".csv"), lang, app
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+2025-10-27 12:55:59,323 ERROR frappe Unable to load translations
+Site: erp-next.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 1040, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 881, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+            ^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 190, in get_translations_from_apps
+    translations.update(get_translations_from_csv(lang, app) or {})
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 202, in get_translations_from_csv
+    os.path.join(frappe.get_app_path(app, "translations"), lang + ".csv"), lang, app
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+2025-10-27 12:55:59,327 ERROR frappe Unable to load translations
+Site: erp-next.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+  File "/home/ghild/erp-next/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 1040, in setup_module_map
+    for module in get_module_list(app):
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 881, in get_module_list
+    return get_file_items(get_app_path(app_name, "modules.txt"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+            ^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 190, in get_translations_from_apps
+    translations.update(get_translations_from_csv(lang, app) or {})
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/translate.py", line 202, in get_translations_from_csv
+    os.path.join(frappe.get_app_path(app, "translations"), lang + ".csv"), lang, app
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 846, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 876, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ghild/erp-next/apps/frappe/frappe/__init__.py", line 817, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'erpnext'
+2025-10-28 09:45:38,439 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'txt': '', 'doctype': 'Head Office Master', 'ignore_user_permissions': '0', 'reference_doctype': 'Branch Master', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
+2025-10-28 09:57:37,154 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'txt': '', 'doctype': 'Head Office Master', 'ignore_user_permissions': '0', 'reference_doctype': 'Branch Master', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
+2025-10-28 09:57:51,115 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'txt': '', 'doctype': 'Head Office Master', 'ignore_user_permissions': '0', 'reference_doctype': 'Branch Master', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
+2025-10-28 09:58:06,353 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'txt': '', 'doctype': 'Head Office Master', 'ignore_user_permissions': '0', 'reference_doctype': 'Branch Master', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
+2025-10-28 09:59:00,075 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'txt': '', 'doctype': 'Head Office Master', 'ignore_user_permissions': '0', 'reference_doctype': 'Branch Master', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
+2025-10-28 10:03:40,085 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'txt': '', 'doctype': 'Head Office Master', 'ignore_user_permissions': '0', 'reference_doctype': 'Branch Master', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
+2025-10-28 10:04:09,927 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'txt': '', 'doctype': 'Head Office Master', 'ignore_user_permissions': '0', 'reference_doctype': 'Branch Master', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
+2025-10-28 10:25:10,944 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'txt': '', 'doctype': 'Head Office Master', 'ignore_user_permissions': '0', 'reference_doctype': 'Branch Master', 'page_length': '10', 'cmd': 'frappe.desk.search.search_link'}
+2025-10-28 12:32:29,697 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'page': '{"name":"Support","title":"Super Admin","public":1}', 'cmd': 'frappe.desk.desktop.get_desktop_page'}
+2025-10-28 12:32:43,579 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'page': '{"name":"Support","title":"Super Admin","public":1}', 'cmd': 'frappe.desk.desktop.get_desktop_page'}
+2025-10-28 12:32:56,733 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'page': '{"name":"Support","title":"Super Admin","public":1}', 'cmd': 'frappe.desk.desktop.get_desktop_page'}
+2025-10-28 12:33:00,112 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'page': '{"name":"Support","title":"Super Admin","public":1}', 'cmd': 'frappe.desk.desktop.get_desktop_page'}
+2025-10-30 09:48:10,771 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Employees Master","name":"new-employees-master-ldeyccseay","__islocal":1,"__unsaved":1,"owner":"Administrator","employee_type":"Officer","status":"Active","assigned_roles":[{"docstatus":0,"doctype":"Has Role","name":"new-has-role-bgjhylziqh","__islocal":1,"__unsaved":1,"owner":"Administrator","parent":"new-employees-master-ldeyccseay","parentfield":"assigned_roles","parenttype":"Employees Master","idx":1,"role":"Trainer"}],"full_name":"test2","email":"vaibhavghildiyal2101@gmail.com","employee_code":"TES009","user":"vaibhavghildiyal2101@gmail.com"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-10-30 09:54:28,644 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Employees Master","name":"new-employees-master-ldeyccseay","__islocal":1,"__unsaved":1,"owner":"Administrator","employee_type":"Officer","status":"Active","assigned_roles":[{"docstatus":0,"doctype":"Has Role","name":"new-has-role-bgjhylziqh","__islocal":1,"__unsaved":1,"owner":"Administrator","parent":"new-employees-master-ldeyccseay","parentfield":"assigned_roles","parenttype":"Employees Master","idx":1,"role":"Trainer"}],"full_name":"test2","email":"vaibhavghildiyal2101@gmail.com","employee_code":"TES009","user":"vaibhavghildiyal2101@gmail.com"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-10-30 10:07:25,291 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Employees Master","name":"new-employees-master-ldeyccseay","__islocal":1,"__unsaved":1,"owner":"Administrator","employee_type":"Officer","status":"Active","assigned_roles":[{"docstatus":0,"doctype":"Has Role","name":"new-has-role-bgjhylziqh","__islocal":1,"__unsaved":1,"owner":"Administrator","parent":"new-employees-master-ldeyccseay","parentfield":"assigned_roles","parenttype":"Employees Master","idx":1,"role":"Trainer"}],"full_name":"test2","email":"vaibhavghildiyal2101@gmail.com","employee_code":"TES009","user":"vaibhavghildiyal2101@gmail.com"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-11-07 02:32:33,164 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'doc': '{"name":"Invoice","owner":"Administrator","creation":"2025-11-07 07:45:07.640168","modified":"2025-11-07 07:45:07.640168","modified_by":"Administrator","docstatus":0,"idx":0,"read_only":0,"in_create":0,"protect_attached_files":0,"naming_rule":"Expression (old style)","allow_rename":1,"module":"Quality Management","is_submittable":0,"istable":0,"issingle":0,"is_tree":0,"is_calendar_and_gantt":0,"editable_grid":0,"quick_entry":0,"grid_page_length":50,"rows_threshold_for_grid_search":20,"track_changes":0,"track_seen":0,"track_views":0,"custom":1,"beta":0,"is_virtual":0,"queue_in_background":0,"max_attachments":0,"hide_toolbar":0,"allow_copy":0,"allow_import":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"show_title_field_in_link":0,"translated_doctype":0,"sort_field":"creation","sort_order":"DESC","force_re_route_to_default_view":0,"document_type":"","show_preview_popup":0,"show_name_in_global_search":0,"email_append_to":0,"has_web_view":0,"allow_guest_to_view":0,"index_web_pages_for_search":1,"engine":"InnoDB","row_format":"Dynamic","doctype":"DocType","fields":[{"docstatus":0,"doctype":"DocField","name":"new-docfield-ibeeciwxil","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":1,"__run_link_triggers":1,"fieldname":"invoice_details_section","label":"Invoice Details"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-mdjmmpbbfw","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":true,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":2,"__run_link_triggers":1,"fieldname":"invoice_number","label":"Invoice Number"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-mylbjygzmg","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Date","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":true,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":3,"__run_link_triggers":1,"fieldname":"invoice_date","label":"Invoice Date","default":" Today"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-erhfzfmajw","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Select","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":true,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":4,"__run_link_triggers":1,"fieldname":"module_source","label":" Module Source","options":"Training\\n Testing of Metals\\n  Consultancy\\n  Production\\n  Other"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-blhtxchtmh","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":5,"__run_link_triggers":1,"fieldname":"reference_id","label":"Reference ID","options":"Test Request\\nSupport Case"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-bivaqvvael","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Link","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":true,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":6,"__run_link_triggers":1,"fieldname":"centre","label":"Centre","options":"Extension Center"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-qmwjlocokf","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":true,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":7,"__run_link_triggers":1,"fieldname":"customer_name","label":"Customer Name"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-xxkqmvxijj","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":8,"__run_link_triggers":1,"fieldname":"customer_contact","label":"Customer Contact"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-qsjhtwfxfz","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":9,"__run_link_triggers":1,"fieldname":"customer_email","label":"Customer Email"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-qqefiqzaqn","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Tab Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":10,"__run_link_triggers":1,"fieldname":"amount_details_tab","label":"Amount Details"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-iovkqfoqrw","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":11,"__run_link_triggers":1,"fieldname":"amount_details_section","label":"Amount Details"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-ispmurmtux","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Currency","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":true,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":12,"__run_link_triggers":1,"fieldname":"base_amount","label":"Base Amount"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-ucznpxonjk","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Percent","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":13,"__run_link_triggers":1,"fieldname":"gst_rate","label":"GST Rate","default":"18"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-vrccmhbyyp","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Currency","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":14,"__run_link_triggers":1,"fieldname":"gst_amount","label":"GST Amount"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-dxerdjotzh","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Percent","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":15,"__run_link_triggers":1,"fieldname":"tds_rate","label":"TDS Rate","options":"0"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-fjicpardno","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Currency","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":16,"__run_link_triggers":1,"fieldname":"tds_amount","label":"TDS Amount"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-hphtderzea","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Currency","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":true,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":17,"__run_link_triggers":1,"fieldname":"total_amount","label":"Total Amount"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-ectzhygqdj","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Tab Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":18,"__run_link_triggers":1,"fieldname":"payment_status_tab","label":"Payment Status"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-noqwacszaq","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":19,"__run_link_triggers":1,"fieldname":"payment_status_section","label":"Payment Status"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-sedorgcunc","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Select","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":true,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":20,"__run_link_triggers":1,"fieldname":"payment_status","label":"Payment Status","options":"    Draft\\n    Raised\\n    Partially Paid\\n    Paid\\n    Overdue\\n    Cancelled","default":"Draft"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-pbauygggwn","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Date","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":21,"__run_link_triggers":1,"fieldname":"payment_date","label":"Payment Date"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-rjzgjtghtl","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Select","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":false,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":22,"__run_link_triggers":1,"fieldname":"payment_method","label":"Payment Method","options":"    Cash\\n    Cheque\\n    Bank Transfer\\n    UPI\\n    Online\\n    Other"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-drokmtqszx","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Text Editor","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoice","parentfield":"fields","parenttype":"DocType","idx":23,"__run_link_triggers":1,"fieldname":"remarks","label":"Remarks"}],"permissions":[{"name":"ndk18p80pj","owner":"Administrator","creation":"2025-11-07 07:45:07.640168","modified":"2025-11-07 07:45:07.640168","modified_by":"Administrator","docstatus":0,"idx":1,"role":"System Manager","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":1,"submit":0,"cancel":0,"amend":0,"mask":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Invoice","parentfield":"permissions","parenttype":"DocType","doctype":"DocPerm"},{"docstatus":0,"doctype":"DocPerm","name":"new-docperm-cffyxskveh","__islocal":1,"__unsaved":1,"owner":"Administrator","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":1,"submit":0,"cancel":0,"amend":0,"mask":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Invoice","parentfield":"permissions","parenttype":"DocType","idx":2,"__unedited":false,"role":"Center Head"},{"docstatus":0,"doctype":"DocPerm","name":"new-docperm-vzjqfurgbp","__islocal":1,"__unsaved":1,"owner":"Administrator","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":0,"submit":0,"cancel":0,"amend":0,"mask":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Invoice","parentfield":"permissions","parenttype":"DocType","idx":3,"__unedited":false,"role":"Data Entry Operator"}],"actions":[],"links":[],"states":[],"__unsaved":1,"autoname":"INV-.####"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-11-07 02:35:03,699 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'doctype': 'Invoice', 'fields': '["`tabInvoice`.`name`","`tabInvoice`.`owner`","`tabInvoice`.`creation`","`tabInvoice`.`modified`","`tabInvoice`.`modified_by`","`tabInvoice`.`_user_tags`","`tabInvoice`.`_comments`","`tabInvoice`.`_assign`","`tabInvoice`.`_liked_by`","`tabInvoice`.`docstatus`","`tabInvoice`.`idx`","`tabInvoice`.`invoice_number`","`tabInvoice`.`invoice_date`","`tabInvoice`.`module_source`","`tabInvoice`.`centre`"]', 'filters': '[]', 'order_by': '`tabInvoice`.`creation` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2025-11-07 02:36:21,057 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'doctype': 'Invoice', 'fields': '["`tabInvoice`.`name`","`tabInvoice`.`owner`","`tabInvoice`.`creation`","`tabInvoice`.`modified`","`tabInvoice`.`modified_by`","`tabInvoice`.`_user_tags`","`tabInvoice`.`_comments`","`tabInvoice`.`_assign`","`tabInvoice`.`_liked_by`","`tabInvoice`.`docstatus`","`tabInvoice`.`idx`","`tabInvoice`.`invoice_number`","`tabInvoice`.`invoice_date`","`tabInvoice`.`module_source`","`tabInvoice`.`centre`"]', 'filters': '[]', 'order_by': '`tabInvoice`.`creation` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2025-11-07 02:37:41,779 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'doctype': 'Invoices', 'fields': '["`tabInvoices`.`name`","`tabInvoices`.`owner`","`tabInvoices`.`creation`","`tabInvoices`.`modified`","`tabInvoices`.`modified_by`","`tabInvoices`.`_user_tags`","`tabInvoices`.`_comments`","`tabInvoices`.`_assign`","`tabInvoices`.`_liked_by`","`tabInvoices`.`docstatus`","`tabInvoices`.`idx`","`tabInvoices`.`invoice_number`","`tabInvoices`.`invoice_date`","`tabInvoices`.`module_source`","`tabInvoices`.`centre`"]', 'filters': '[]', 'order_by': '`tabInvoices`.`creation` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2025-11-07 02:38:12,264 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'doctype': 'Invoices', 'fields': '["`tabInvoices`.`name`","`tabInvoices`.`owner`","`tabInvoices`.`creation`","`tabInvoices`.`modified`","`tabInvoices`.`modified_by`","`tabInvoices`.`_user_tags`","`tabInvoices`.`_comments`","`tabInvoices`.`_assign`","`tabInvoices`.`_liked_by`","`tabInvoices`.`docstatus`","`tabInvoices`.`idx`","`tabInvoices`.`invoice_number`","`tabInvoices`.`invoice_date`","`tabInvoices`.`module_source`","`tabInvoices`.`centre`"]', 'filters': '[]', 'order_by': '`tabInvoices`.`creation` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2025-11-07 02:40:53,493 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'doc': '{"name":"Invoices","owner":"Administrator","creation":"2025-11-07 07:45:07.640168","modified":"2025-11-07 08:02:32.862946","modified_by":"Administrator","docstatus":0,"idx":0,"read_only":0,"in_create":0,"protect_attached_files":0,"naming_rule":"Expression (old style)","autoname":"INV-.####","allow_rename":1,"module":"Quality Management","is_submittable":0,"istable":0,"issingle":0,"is_tree":0,"is_calendar_and_gantt":0,"editable_grid":0,"quick_entry":0,"grid_page_length":50,"rows_threshold_for_grid_search":20,"track_changes":0,"track_seen":0,"track_views":0,"custom":1,"beta":0,"is_virtual":0,"queue_in_background":0,"max_attachments":0,"hide_toolbar":0,"allow_copy":0,"allow_import":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"show_title_field_in_link":0,"translated_doctype":0,"sort_field":"creation","sort_order":"DESC","force_re_route_to_default_view":0,"document_type":"","show_preview_popup":0,"show_name_in_global_search":0,"email_append_to":0,"has_web_view":0,"allow_guest_to_view":0,"index_web_pages_for_search":1,"engine":"InnoDB","row_format":"Dynamic","doctype":"DocType","fields":[{"docstatus":0,"doctype":"DocField","name":"new-docfield-rflgimdpuw","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":1,"label":"Invoice Details","fieldname":"invoice_details_section","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-rjbpxfhpxj","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Date","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":1,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":1,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":2,"label":"Invoice Date","fieldname":"invoice_date","length":0,"default":" Today","columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-dwoihklyqm","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Select","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":1,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":1,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":3,"label":" Module Source","fieldname":"module_source","length":0,"options":"Training\\nTesting of Metals\\nConsultancy\\nProduction\\nOther","columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-jbsyoefxav","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":4,"label":"Reference ID","fieldname":"reference_id","length":0,"options":"Test Request\\nSupport Case","columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-kwrgnhdaag","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Link","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":1,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":1,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":5,"label":"Centre","fieldname":"centre","length":0,"options":"Extension Center","columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-cmdxasbkbt","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":1,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":6,"label":"Customer Name","fieldname":"customer_name","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-vywjuuljuj","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":7,"label":"Customer Contact","fieldname":"customer_contact","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-ljbjofbehl","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":8,"label":"Customer Email","fieldname":"customer_email","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-pqbktfwaap","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Tab Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":9,"label":"Amount Details","fieldname":"amount_details_tab","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-oszdxnheuh","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":10,"label":"Amount Details","fieldname":"amount_details_section","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-xpyunmacyc","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Currency","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":1,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":11,"label":"Base Amount","fieldname":"base_amount","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-mwlplyzink","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Percent","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":12,"label":"GST Rate","fieldname":"gst_rate","length":0,"default":"18","columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-thgpuqvlqx","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Currency","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":13,"label":"GST Amount","fieldname":"gst_amount","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-myxszqkljn","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Percent","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":14,"label":"TDS Rate","fieldname":"tds_rate","length":0,"options":"0","columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-eopwpuerbr","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Currency","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":15,"label":"TDS Amount","fieldname":"tds_amount","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-pfepolxmtp","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Currency","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":1,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":16,"label":"Total Amount","fieldname":"total_amount","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-eyxyqenais","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Tab Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":17,"label":"Payment Status","fieldname":"payment_status_tab","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-vbjkzclnwy","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":18,"label":"Payment Status","fieldname":"payment_status_section","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-pmhwmfmtfz","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Select","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":1,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":19,"label":"Payment Status","fieldname":"payment_status","length":0,"options":"Draft\\nRaised\\nPartially Paid\\nPaid\\nOverdue\\nCancelled","default":"Draft","columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-pbfucbiwtv","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Date","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":20,"label":"Payment Date","fieldname":"payment_date","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-vdlzpxdvto","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Select","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":21,"label":"Payment Method","fieldname":"payment_method","length":0,"options":"Cash\\nCheque\\nBank Transfer\\nUPI\\nOnline\\nOther","columns":0},{"docstatus":0,"doctype":"DocField","name":"new-docfield-qgwunsabzq","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Text Editor","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"mask":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Invoices","parentfield":"fields","parenttype":"DocType","idx":22,"label":"Remarks","fieldname":"remarks","length":0,"columns":0}],"permissions":[{"name":"ndk18p80pj","owner":"Administrator","creation":"2025-11-07 07:45:07.640168","modified":"2025-11-07 08:02:32.862946","modified_by":"Administrator","docstatus":0,"idx":1,"role":"System Manager","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":1,"submit":0,"cancel":0,"amend":0,"mask":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Invoices","parentfield":"permissions","parenttype":"DocType","doctype":"DocPerm"},{"name":"1k86bmj9k9","owner":"Administrator","creation":"2025-11-07 07:45:07.640168","modified":"2025-11-07 08:02:32.862946","modified_by":"Administrator","docstatus":0,"idx":2,"role":"Center Head","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":1,"submit":0,"cancel":0,"amend":0,"mask":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Invoices","parentfield":"permissions","parenttype":"DocType","doctype":"DocPerm"},{"name":"1k8smi97r1","owner":"Administrator","creation":"2025-11-07 07:45:07.640168","modified":"2025-11-07 08:02:32.862946","modified_by":"Administrator","docstatus":0,"idx":3,"role":"Data Entry Operator","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":0,"submit":0,"cancel":0,"amend":0,"mask":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Invoices","parentfield":"permissions","parenttype":"DocType","doctype":"DocPerm"}],"actions":[],"links":[],"states":[],"__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-11-07 02:41:46,872 ERROR frappe New Exception collected in error log
+Site: erp-next.localhost
+Form Dict: {'doctype': 'Invoices', 'fields': '["`tabInvoices`.`name`","`tabInvoices`.`owner`","`tabInvoices`.`creation`","`tabInvoices`.`modified`","`tabInvoices`.`modified_by`","`tabInvoices`.`_user_tags`","`tabInvoices`.`_comments`","`tabInvoices`.`_assign`","`tabInvoices`.`_liked_by`","`tabInvoices`.`docstatus`","`tabInvoices`.`idx`","`tabInvoices`.`invoice_date`","`tabInvoices`.`module_source`","`tabInvoices`.`centre`"]', 'filters': '[]', 'order_by': '`tabInvoices`.`creation` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
