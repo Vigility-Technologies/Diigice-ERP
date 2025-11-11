@@ -1,0 +1,65 @@
+2025-10-28 10:02:15,934 INFO ipython === bench console session ===
+2025-10-28 10:02:15,934 INFO ipython frappe.get_all("DocType", filters={"name": "Head Office Master"})
+2025-10-28 10:02:15,934 INFO ipython === session end ===
+2025-10-28 10:34:47,561 INFO ipython === bench console session ===
+2025-10-28 10:34:47,563 INFO ipython frappe.get_doc("DocType", "Head Office Master")
+2025-10-28 10:34:47,563 INFO ipython doc = frappe.get_doc("DocType", "Head Office Master")
+2025-10-28 10:34:47,563 INFO ipython doc.run_module_method("on_doctype_update")
+2025-10-28 10:34:47,563 INFO ipython from frappe.model.sync import sync_for
+2025-10-28 10:34:47,563 INFO ipython sync_for("Head Office Master")
+2025-10-28 10:34:47,563 INFO ipython frappe.db.commit()
+2025-10-28 10:34:47,563 INFO ipython print("Table created successfully!")
+2025-10-28 10:34:47,563 INFO ipython frappe.db.sql("SHOW TABLES LIKE 'tabHead Office Master'")
+2025-10-28 10:34:47,563 INFO ipython doc = frappe.get_doc("DocType", "Head Office Master")
+2025-10-28 10:34:47,563 INFO ipython from frappe.core.doctype.doctype.doctype import DocType as DocTypeClass
+2025-10-28 10:34:47,563 INFO ipython table_desc = DocTypeClass.get_table_columns(doc)
+2025-10-28 10:34:47,563 INFO ipython doc = frappe.get_doc("DocType", "Head Office Master")
+2025-10-28 10:34:47,563 INFO ipython print(f"Custom: {doc.custom}")
+2025-10-28 10:34:47,563 INFO ipython print(f"Module: {doc.module}")
+2025-10-28 10:34:47,563 INFO ipython frappe.db.sql(f"""
+    CREATE TABLE IF NOT EXISTS `tab{doc.name}` (
+        `name` varchar(140) NOT NULL,
+        `creation` datetime(6) DEFAULT NULL,
+        `modified` datetime(6) DEFAULT NULL,
+        `modified_by` varchar(140) DEFAULT NULL,
+        `owner` varchar(140) DEFAULT NULL,
+        `docstatus` int(1) NOT NULL DEFAULT 0,
+        `idx` int(8) NOT NULL DEFAULT 0,
+        PRIMARY KEY (`name`),
+        KEY `modified` (`modified`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+""")
+2025-10-28 10:34:47,563 INFO ipython for field in doc.fields:
+    if field.fieldname and field.fieldtype:
+        try:
+            column_def = frappe.db.get_column_definition(field.fieldtype, field)
+            frappe.db.sql(f"ALTER TABLE `tab{doc.name}` ADD COLUMN `{field.fieldname}` {column_def}")
+        except Exception as e:
+            print(f"Field {field.fieldname} - {e}")
+
+frappe.db.commit()
+2025-10-28 10:34:47,563 INFO ipython result = frappe.db.sql("SHOW TABLES LIKE 'tabHead Office Master'")
+2025-10-28 10:34:47,563 INFO ipython print(f"Table created: {result}")
+2025-10-28 10:34:47,563 INFO ipython fields_to_add = [
+    ("organization_name", "varchar(140)"),
+    ("address", "text"),
+    ("gst_number", "varchar(140)"),
+    ("contact_person", "varchar(140)"),
+    ("contact_number", "varchar(140)"),
+    ("email", "varchar(140)")
+]
+
+for fieldname, column_type in fields_to_add:
+    try:
+        frappe.db.sql(f"ALTER TABLE `tabHead Office Master` ADD COLUMN `{fieldname}` {column_type}")
+        print(f"Added field: {fieldname}")
+    except Exception as e:
+        print(f"Field {fieldname} - {e}")
+
+frappe.db.commit()
+2025-10-28 10:34:47,563 INFO ipython columns = frappe.db.sql("SHOW COLUMNS FROM `tabHead Office Master`")
+print("\nTable columns:")
+for col in columns:
+    print(f"- {col[0]}: {col[1]}")
+    
+2025-10-28 10:34:47,563 INFO ipython === session end ===

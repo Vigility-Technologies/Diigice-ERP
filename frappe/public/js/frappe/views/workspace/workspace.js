@@ -1,0 +1,6 @@
+{
+    // ...existing code...
+    can_edit: true,
+    can_create: true,
+    // ...existing code...
+}

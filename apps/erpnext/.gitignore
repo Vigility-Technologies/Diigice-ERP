@@ -1,0 +1,89 @@
+*.pyc
+*.py~
+.DS_Store
+conf.py
+latest_updates.json
+.wnf-lang-status
+*.egg-info
+dist/
+erpnext/public/dist
+erpnext/docs/current
+*.swp
+*.swo
+__pycache__
+*~
+.idea/
+.vscode/
+.helix/
+node_modules/
+.backportrc.json
+# Aider AI Chat
+.aider*
+# Python cache / build files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+*.eggs/
+*.log
+
+# Node / frontend build files
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Compiled JS/CSS assets
+public/js/
+public/css/
+public/dist/
+assets/
+*.min.js
+*.min.css
+
+# Frappe specific
+sites/assets/
+sites/cached_sites.json
+sites/*/locks
+sites/*/public/backups/
+sites/*/public/files/
+sites/*/public/private/files/
+sites/*/public/.well-known/
+sites/*/private/backups/
+sites/*/private/files/
+sites/*/private/temp/
+sites/*/logs/
+sites/*/index.html
+sites/*/public/build/
+sites/assets/
+sites/*/site_config.json
+sites/*/applications.txt
+sites/*/installed_apps.txt
+
+# Bench / environment
+env/
+venv/
+*.env
+*.env.*
+*.sqlite
+*.db
+*.DS_Store
+*.swp
+
+# Logs and temporary files
+*.log
+*.pid
+*.gz
+*.swp
+*.bak
+*.tmp
+*.old
+
+# OS-specific
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/
+

@@ -1,0 +1,158 @@
+[
+ {
+  "assigned_roles": [
+   {
+    "role": "Trainer"
+   }
+  ],
+  "contact_number": null,
+  "department": null,
+  "designation": null,
+  "docstatus": 0,
+  "doctype": "Employees Master",
+  "email": "vaibhavghildiyal21@gmail.com",
+  "employee_code": "TES007",
+  "employee_type": "Ad-hoc",
+  "full_name": "tester",
+  "modified": "2025-10-30 13:28:32.560653",
+  "name": "TES007",
+  "status": "Active",
+  "user": null
+ },
+ {
+  "assigned_roles": [
+   {
+    "role": "Trainer"
+   }
+  ],
+  "contact_number": null,
+  "department": null,
+  "designation": null,
+  "docstatus": 0,
+  "doctype": "Employees Master",
+  "email": "vaibhavghildiyal2101@gmail.com",
+  "employee_code": "TES002",
+  "employee_type": "Ad-hoc",
+  "full_name": "test2",
+  "modified": "2025-10-30 15:40:05.543987",
+  "name": "TES002",
+  "status": "Active",
+  "user": "vaibhavghildiyal2101@gmail.com"
+ },
+ {
+  "assigned_roles": [
+   {
+    "role": "Center Head"
+   }
+  ],
+  "contact_number": null,
+  "department": null,
+  "designation": null,
+  "docstatus": 0,
+  "doctype": "Employees Master",
+  "email": "rahulmutreja76@gmail.com",
+  "employee_code": "TES004",
+  "employee_type": "Ad-hoc",
+  "full_name": "tester3",
+  "modified": "2025-10-30 15:43:09.120862",
+  "name": "TES004",
+  "status": "Active",
+  "user": "Administrator"
+ },
+ {
+  "assigned_roles": [
+   {
+    "role": "Trainer"
+   }
+  ],
+  "contact_number": null,
+  "department": null,
+  "designation": null,
+  "docstatus": 0,
+  "doctype": "Employees Master",
+  "email": "adi21@gmail.com",
+  "employee_code": "TEST999",
+  "employee_type": "Contract",
+  "full_name": "Test Employee",
+  "modified": "2025-10-30 16:22:47.031398",
+  "name": "TEST999",
+  "status": "Active",
+  "user": null
+ },
+ {
+  "assigned_roles": [
+   {
+    "role": "Trainer"
+   }
+  ],
+  "contact_number": null,
+  "department": null,
+  "designation": null,
+  "docstatus": 0,
+  "doctype": "Employees Master",
+  "email": "vaibhavghildiyal21@gmail.com",
+  "employee_code": "TES000",
+  "employee_type": "Ad-hoc",
+  "full_name": "Vaibhu",
+  "modified": "2025-10-30 16:29:01.366541",
+  "name": "TES000",
+  "status": "Active",
+  "user": null
+ },
+ {
+  "assigned_roles": [
+   {
+    "role": "Trainer"
+   }
+  ],
+  "contact_number": null,
+  "department": null,
+  "designation": null,
+  "docstatus": 0,
+  "doctype": "Employees Master",
+  "email": "vaibhavghildiyal21@gmail.com",
+  "employee_code": "PPDC01",
+  "employee_type": "Contract",
+  "full_name": "Vaibhu",
+  "modified": "2025-10-30 16:33:46.823179",
+  "name": "PPDC01",
+  "status": "Active",
+  "user": null
+ },
+ {
+  "assigned_roles": [
+   {
+    "role": "Center Head"
+   }
+  ],
+  "contact_number": null,
+  "department": null,
+  "designation": null,
+  "docstatus": 0,
+  "doctype": "Employees Master",
+  "email": "akshaybhandari0211@gmail.com",
+  "employee_code": "TES0333",
+  "employee_type": "Ad-hoc",
+  "full_name": "Akshay",
+  "modified": "2025-10-31 11:02:00.272881",
+  "name": "TES0333",
+  "status": "Active",
+  "user": null
+ },
+ {
+  "assigned_roles": [],
+  "contact_number": null,
+  "department": null,
+  "designation": null,
+  "docstatus": 0,
+  "doctype": "Employees Master",
+  "email": "vaibhavghildiyal21@gmail.com",
+  "employee_code": "555555",
+  "employee_type": "Officer",
+  "full_name": "Vaibhu",
+  "modified": "2025-11-07 17:52:51.260581",
+  "name": "555555",
+  "status": "Active",
+  "user": null
+ }
+]
