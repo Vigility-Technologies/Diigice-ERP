@@ -2796,3 +2796,39 @@ index creation(creation))
 			COLLATE=utf8mb4_unicode_ci
 2025-11-10 01:43:08,957 WARNING database DDL Query made to DB:
 ALTER TABLE `tabJob Work` ADD COLUMN `job_order_code` varchar(140), ADD COLUMN `centre` varchar(140), ADD COLUMN `client_name` varchar(140), ADD COLUMN `contact_number` varchar(140), ADD COLUMN `order_date` date, ADD COLUMN `expected_delivery_date` date, ADD COLUMN `material_required` longtext, ADD COLUMN `quantity` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `work_description` longtext, ADD COLUMN `raw_material_po_number` varchar(140), ADD COLUMN `supplier_name` varchar(140), ADD COLUMN `material_received_date` varchar(140), ADD COLUMN `quoted_amount` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `actual_cost` decimal(21,9) NOT NULL DEFAULT 0.0, ADD COLUMN `invoice_number` varchar(140), ADD COLUMN `invoice_date` varchar(140), ADD COLUMN `status` varchar(140) DEFAULT 'Created', ADD COLUMN `completion_date` date, ADD COLUMN `remarks` longtext
+2025-11-10 08:44:02,339 WARNING database DDL Query made to DB:
+create table `tabEmployee Master New` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2025-11-11 04:35:59,889 WARNING database DDL Query made to DB:
+create table `tabRFD Report` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci

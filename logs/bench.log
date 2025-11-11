@@ -364,3 +364,25 @@
 2025-11-10 01:50:07,978 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Sanction apps/erpnext/erpnext/quality_management/doctype/sanction/sanction.json
 2025-11-10 01:50:08,885 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Support Case apps/erpnext/erpnext/quality_management/doctype/support_case/support_case.json
 2025-11-10 01:50:09,816 INFO /home/ghild/.local/bin/bench --site erp-next.localhost export-json Test Request apps/erpnext/erpnext/quality_management/doctype/test_request/test_request.json
+2025-11-10 12:00:04,270 INFO /home/ghild/.local/bin/bench --verbose --site all backup
+2025-11-10 12:48:38,409 INFO /home/ghild/.local/bin/bench start
+2025-11-10 12:48:38,648 INFO /home/ghild/.local/bin/bench watch
+2025-11-10 12:48:38,653 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-10 12:48:38,662 INFO /home/ghild/.local/bin/bench worker
+2025-11-10 12:48:38,666 INFO /home/ghild/.local/bin/bench schedule
+2025-11-11 04:33:38,421 INFO /home/ghild/.local/bin/bench start
+2025-11-11 04:33:38,729 INFO /home/ghild/.local/bin/bench watch
+2025-11-11 04:33:38,731 INFO /home/ghild/.local/bin/bench worker
+2025-11-11 04:33:38,732 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-11 04:33:38,740 INFO /home/ghild/.local/bin/bench schedule
+2025-11-11 06:00:33,063 INFO /home/ghild/.local/bin/bench --verbose --site all backup
+2025-11-11 07:27:45,041 INFO /home/ghild/.local/bin/bench start
+2025-11-11 07:27:45,208 INFO /home/ghild/.local/bin/bench serve --port 8001
+2025-11-11 07:27:45,236 INFO /home/ghild/.local/bin/bench watch
+2025-11-11 07:27:45,236 INFO /home/ghild/.local/bin/bench schedule
+2025-11-11 07:27:45,237 INFO /home/ghild/.local/bin/bench worker
+2025-11-11 09:45:06,589 INFO /home/ghild/.local/bin/bench start
+2025-11-11 09:45:06,858 INFO /home/ghild/.local/bin/bench schedule
+2025-11-11 09:45:06,860 INFO /home/ghild/.local/bin/bench worker
+2025-11-11 09:45:06,867 INFO /home/ghild/.local/bin/bench watch
+2025-11-11 09:45:06,869 INFO /home/ghild/.local/bin/bench serve --port 8001
