@@ -9,8 +9,8 @@ web: bench serve  --port 8001
 socketio: /usr/bin/node apps/frappe/socketio.js
 
 
-watch: bench watch
-
+# watch: bench watch
+# DISABLED: watch process causes asset hash mismatches (rebuilds with new hashes while assets.json is locked)
 
 schedule: bench schedule
 
