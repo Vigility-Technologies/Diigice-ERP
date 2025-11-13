@@ -1,5 +1,120 @@
 # Virtual environment
-env/*
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
 # Logs
-logs/*.log*
+logs/
+*.log
+*.log.*
+
+# Config runtime artifacts
+config/*.lock
+config/*.acl
+config/pids/
+config/scheduler_process
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Node modules (already ignored in apps, but adding root level)
+node_modules/
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE files
+.idea/
+.vscode/
+.vs/
+*.sublime-project
+*.sublime-workspace
+.helix/
+.aider*
+
+# Environment variables
+.env
+.env.*
+*.env
+
+# Sites directory - runtime artifacts
+sites/assets/
+sites/cached_sites.json
+sites/*/locks/
+sites/*/public/backups/
+sites/*/public/files/
+sites/*/public/private/files/
+sites/*/public/.well-known/
+sites/*/private/backups/
+sites/*/private/files/
+sites/*/private/temp/
+sites/*/logs/
+sites/*/index.html
+sites/*/public/build/
+sites/*/site_config.json
+sites/*/applications.txt
+sites/*/installed_apps.txt
+sites/*/touched_tables.json
+sites/*/indexes/
+
+# Compiled translations
+*.mo
+
+# Build artifacts
+*.min.js
+*.min.css
+# Note: apps/*/public/dist/ is handled by app-level .gitignore files
+# apps/*/public/js/ and apps/*/public/css/ may contain source files, 
+# so rely on app-level .gitignore for these
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+*.gz
+*.pid
+
+# Test coverage
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.cypress-coverage
+coverage/
+.nyc_output/
+
+# Cypress
+cypress/screenshots/
+cypress/videos/
+
+# Custom site directory (if exists)
+erp-next.localhost/
