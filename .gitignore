@@ -1,0 +1,5 @@
+# Virtual environment
+env/*
+
+# Logs
+logs/*.log*
