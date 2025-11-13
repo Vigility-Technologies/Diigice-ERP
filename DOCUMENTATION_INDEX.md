@@ -5,61 +5,66 @@
 This documentation helps you understand and fix the **Asset Hash Mismatch** problem that causes 404 errors in CSS/JS files.
 
 ### 1. **ASSET_HASH_QUICK_FIX.md** ⭐ START HERE
-   - **Purpose**: Quick reference for immediate fixes
-   - **When to use**: You have 404 errors and want to fix NOW
-   - **Time**: 30 seconds to 2 minutes
-   - **Audience**: All developers
-   - **Contains**:
-     - Problem recognition
-     - Quick fix commands
-     - Common commands table
-     - Troubleshooting tips
+
+- **Purpose**: Quick reference for immediate fixes
+- **When to use**: You have 404 errors and want to fix NOW
+- **Time**: 30 seconds to 2 minutes
+- **Audience**: All developers
+- **Contains**:
+  - Problem recognition
+  - Quick fix commands
+  - Common commands table
+  - Troubleshooting tips
 
 ### 2. **ASSET_HASH_FIX_GUIDE.md** 📖 DETAILED GUIDE
-   - **Purpose**: Complete step-by-step explanation and solutions
-   - **When to use**: You want to understand the problem deeply
-   - **Time**: 10-15 minutes to read
-   - **Audience**: All developers, especially new ones
-   - **Contains**:
-     - Problem overview with examples
-     - Root cause analysis
-     - 5-step solution process
-     - Prevention tips
-     - Helper script explanation
-     - Troubleshooting reference table
+
+- **Purpose**: Complete step-by-step explanation and solutions
+- **When to use**: You want to understand the problem deeply
+- **Time**: 10-15 minutes to read
+- **Audience**: All developers, especially new ones
+- **Contains**:
+  - Problem overview with examples
+  - Root cause analysis
+  - 5-step solution process
+  - Prevention tips
+  - Helper script explanation
+  - Troubleshooting reference table
 
 ### 3. **ASSET_HASH_TECHNICAL.md** 🔬 TECHNICAL DEEP DIVE
-   - **Purpose**: Understand how the system works internally
-   - **When to use**: You're curious about the architecture
-   - **Time**: 20-30 minutes to read
-   - **Audience**: Developers who want to understand the why
-   - **Contains**:
-     - How build process works
-     - Asset mapping system
-     - Runtime resolution flow
-     - Hash generation details
-     - Benefits of hash-based versioning
-     - Debugging techniques
-     - Performance analysis
+
+- **Purpose**: Understand how the system works internally
+- **When to use**: You're curious about the architecture
+- **Time**: 20-30 minutes to read
+- **Audience**: Developers who want to understand the why
+- **Contains**:
+  - How build process works
+  - Asset mapping system
+  - Runtime resolution flow
+  - Hash generation details
+  - Benefits of hash-based versioning
+  - Debugging techniques
+  - Performance analysis
 
 ### 4. **rebuild-assets.sh** 🚀 AUTOMATED SCRIPT
-   - **Purpose**: Automatically fix all asset issues
-   - **When to use**: Running the rebuild process
-   - **Time**: 2-3 minutes (fully automated)
-   - **Audience**: All developers
-   - **Does**:
-     - Stops server
-     - Cleans dist folders
-     - Rebuilds assets
-     - Regenerates assets.json
-     - Verifies the fix
-     - Shows helpful messages
+
+- **Purpose**: Automatically fix all asset issues
+- **When to use**: Running the rebuild process
+- **Time**: 2-3 minutes (fully automated)
+- **Audience**: All developers
+- **Does**:
+  - Stops server
+  - Cleans dist folders
+  - Rebuilds assets
+  - Regenerates assets.json
+  - Verifies the fix
+  - Shows helpful messages
 
 ---
 
 ## 🎯 Quick Start Guide
 
 ### Situation 1: You Have 404 Errors NOW
+
 ```bash
 # Read this first (30 seconds)
 cat ASSET_HASH_QUICK_FIX.md
@@ -71,6 +76,7 @@ cat ASSET_HASH_QUICK_FIX.md
 ```
 
 ### Situation 2: You Want to Understand Everything
+
 ```bash
 # Read in this order:
 1. ASSET_HASH_QUICK_FIX.md (overview)
@@ -80,6 +86,7 @@ cat ASSET_HASH_QUICK_FIX.md
 ```
 
 ### Situation 3: You're Setting Up CI/CD or Automation
+
 ```bash
 # Read this first
 ASSET_HASH_TECHNICAL.md
@@ -95,6 +102,7 @@ ASSET_HASH_TECHNICAL.md
 ## 🔑 Key Concepts
 
 ### The Problem
+
 ```
 Browser asks for: desk.bundle.css
 assets.json says: desk.bundle.OLDASH.css (old file)
@@ -103,6 +111,7 @@ Result: ❌ 404 NOT FOUND
 ```
 
 ### The Solution
+
 ```
 Scan all files in dist/
 Extract actual hashes
@@ -114,14 +123,14 @@ Result: ✅ ALL HASHES MATCH - 200 OK
 
 ## 📋 When to Use Each Document
 
-| Scenario | Use This | Time |
-|----------|----------|------|
-| **Emergency: Site is broken** | ASSET_HASH_QUICK_FIX.md | 1 min |
-| **Learning about the issue** | ASSET_HASH_FIX_GUIDE.md | 10 min |
-| **Understanding internals** | ASSET_HASH_TECHNICAL.md | 20 min |
-| **Fixing it automatically** | ./rebuild-assets.sh | 3 min |
-| **Manual fix step-by-step** | ASSET_HASH_FIX_GUIDE.md Section 4 | 5 min |
-| **Creating own solution** | ASSET_HASH_TECHNICAL.md + script | 30 min |
+| Scenario                      | Use This                          | Time   |
+| ----------------------------- | --------------------------------- | ------ |
+| **Emergency: Site is broken** | ASSET_HASH_QUICK_FIX.md           | 1 min  |
+| **Learning about the issue**  | ASSET_HASH_FIX_GUIDE.md           | 10 min |
+| **Understanding internals**   | ASSET_HASH_TECHNICAL.md           | 20 min |
+| **Fixing it automatically**   | ./rebuild-assets.sh               | 3 min  |
+| **Manual fix step-by-step**   | ASSET_HASH_FIX_GUIDE.md Section 4 | 5 min  |
+| **Creating own solution**     | ASSET_HASH_TECHNICAL.md + script  | 30 min |
 
 ---
 
@@ -141,16 +150,19 @@ After applying the fix, verify:
 ## 🚀 Recommended Reading Order
 
 ### For New Developers
+
 1. ASSET_HASH_QUICK_FIX.md - Know the quick fix
 2. ASSET_HASH_FIX_GUIDE.md - Understand the full context
 3. ASSET_HASH_TECHNICAL.md - Appreciate the architecture
 
 ### For DevOps/CI-CD
+
 1. ASSET_HASH_TECHNICAL.md - Understand the system
 2. rebuild-assets.sh - See the implementation
 3. Adapt script for your CI/CD pipeline
 
 ### For Troubleshooting
+
 1. ASSET_HASH_QUICK_FIX.md - Quick fixes
 2. ASSET_HASH_FIX_GUIDE.md - Advanced troubleshooting section
 3. ASSET_HASH_TECHNICAL.md - Debugging techniques section
@@ -163,7 +175,7 @@ After applying the fix, verify:
 Your Issue
     ↓
 ASSET_HASH_QUICK_FIX.md ←─── Quick fix? ──→ YES → Run rebuild-assets.sh ✅
-    ↓                                              
+    ↓
   NO, need more info
     ↓
 ASSET_HASH_FIX_GUIDE.md ←─── Understand? ──→ YES → Follow 5-step solution ✅
@@ -178,26 +190,33 @@ ASSET_HASH_TECHNICAL.md ←─── How it works? → YES → Deep technical kn
 ## 💡 Pro Tips
 
 ### Tip 1: Prevent Future Issues
+
 Add to your pre-commit hook:
+
 ```bash
 python3 /tmp/generate_assets.py
 ```
 
 ### Tip 2: Monitor for Problems
+
 Watch for these signs:
+
 - Missing CSS styles
 - JavaScript errors
 - "404" in browser console
 - Assets returning 4xx status codes
 
 ### Tip 3: Keep These Handy
+
 Save these commands in your shell:
+
 ```bash
 alias fix-assets='./rebuild-assets.sh'
 alias check-assets='curl -I http://127.0.0.1:8001/assets/frappe/dist/css/desk.bundle*.css'
 ```
 
 ### Tip 4: When in Doubt
+
 Run: `./rebuild-assets.sh`
 95% of asset issues are solved by this!
 
@@ -228,11 +247,13 @@ A: Yes, once assets.json no longer references them. The script handles this.
 ## 🎓 Learning Paths
 
 ### Path 1: "Just Fix It" (5 minutes)
+
 1. ASSET_HASH_QUICK_FIX.md
 2. Run rebuild-assets.sh
 3. Done!
 
 ### Path 2: "I Want to Understand" (30 minutes)
+
 1. ASSET_HASH_QUICK_FIX.md (5 min)
 2. ASSET_HASH_FIX_GUIDE.md (15 min)
 3. Read rebuild-assets.sh code (5 min)
@@ -240,6 +261,7 @@ A: Yes, once assets.json no longer references them. The script handles this.
 5. Verify it works (2 min)
 
 ### Path 3: "I Want to Master It" (60 minutes)
+
 1. ASSET_HASH_QUICK_FIX.md (5 min)
 2. ASSET_HASH_FIX_GUIDE.md (15 min)
 3. ASSET_HASH_TECHNICAL.md (25 min)
@@ -267,13 +289,14 @@ If you're still having issues:
 **For**: Diigice-ERP Development Team  
 **Framework**: ERPNext/Frappe  
 **Build Tool**: esbuild  
-**Asset System**: Hash-based versioning  
+**Asset System**: Hash-based versioning
 
 ---
 
 ## 🎉 You're All Set!
 
 You now have everything you need to:
+
 - ✅ Fix asset hash issues quickly
 - ✅ Understand how the system works
 - ✅ Prevent future problems

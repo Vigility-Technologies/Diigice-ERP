@@ -3,6 +3,7 @@
 ## 📌 Overview
 
 The ERPNext/Frappe framework uses a **hash-based asset versioning system** to ensure:
+
 1. Users always get the latest assets (cache busting)
 2. Old files are cleaned up automatically
 3. Browser caches are invalidated when content changes
@@ -12,6 +13,7 @@ The ERPNext/Frappe framework uses a **hash-based asset versioning system** to en
 ## 🔧 How It Works
 
 ### 1. Build Process
+
 When you run `bench build`, the esbuild compiler:
 
 ```
@@ -46,17 +48,19 @@ When you run `bench build`, the esbuild compiler:
 ```
 
 ### 2. Asset Mapping (assets.json)
+
 ```json
 {
-    "desk.bundle.js": "/assets/frappe/dist/js/desk.bundle.6ZHVT5SU.js",
-    //  ↑ Logical name          ↑ Actual file path with unique hash
-    
-    "website.bundle.css": "/assets/frappe/dist/css/website.bundle.22CZNFEN.css",
-    "erpnext.bundle.css": "/assets/erpnext/dist/css/erpnext.bundle.RZHWBP2I.css"
+  "desk.bundle.js": "/assets/frappe/dist/js/desk.bundle.6ZHVT5SU.js",
+  //  ↑ Logical name          ↑ Actual file path with unique hash
+
+  "website.bundle.css": "/assets/frappe/dist/css/website.bundle.22CZNFEN.css",
+  "erpnext.bundle.css": "/assets/erpnext/dist/css/erpnext.bundle.RZHWBP2I.css"
 }
 ```
 
 ### 3. Runtime Resolution
+
 When the browser loads a page:
 
 ```
@@ -107,18 +111,22 @@ T3: Server starts
 ```
 
 ### Root Causes
+
 1. **Redis Connection Failed** during build
+
    ```
    WARN Cannot connect to redis_cache to update assets_json
    ```
 
 2. **Build Process Interrupted** (Ctrl+C)
+
    ```
    Build started but didn't complete
    New files generated, assets.json not updated
    ```
 
 3. **Git Operations** (merge, rebase)
+
    ```
    Old assets.json file from previous branch
    Conflicts with newly built files
@@ -177,12 +185,12 @@ Hash: MD5/SHA1 = "B6FRELQE"  ← Completely different hash!
 
 ### Benefits
 
-| Issue | Solution |
-|-------|----------|
-| Browser caches old file | New hash = new URL = browser re-downloads |
-| Multiple versions of same app running | Each version has its own hashes |
-| Stale CDN caches | Hash in URL invalidates CDN cache |
-| Development vs Production | Different builds = different hashes |
+| Issue                                 | Solution                                  |
+| ------------------------------------- | ----------------------------------------- |
+| Browser caches old file               | New hash = new URL = browser re-downloads |
+| Multiple versions of same app running | Each version has its own hashes           |
+| Stale CDN caches                      | Hash in URL invalidates CDN cache         |
+| Development vs Production             | Different builds = different hashes       |
 
 ### Example Timeline
 
@@ -194,7 +202,7 @@ Day 1: Deploy version 1
 Day 2: Deploy version 2 (with bug fix)
   desk.bundle.js → B6FRELQE (different hash!)
   HTML: <script src="/assets/desk.bundle.js"></script>
-  
+
 What happens:
   URL stays same: /assets/desk.bundle.js
   But server maps it to: /assets/.../desk.bundle.B6FRELQE.js
@@ -231,6 +239,7 @@ sites/assets/
 ```
 
 ### assets.json Content
+
 ```json
 {
     "build_events.bundle.js": "/assets/frappe/dist/js/build_events.bundle.F47Z5BDW.js",
@@ -248,6 +257,7 @@ sites/assets/
 ## 🔍 Debugging Steps
 
 ### 1. Find Mismatch
+
 ```bash
 # List actual files
 ACTUAL=$(ls sites/assets/frappe/dist/css/ | grep "^desk" | head -1)
@@ -262,6 +272,7 @@ echo "Mapped: $MAPPED"
 ```
 
 ### 2. Verify Fix Works
+
 ```bash
 # After running rebuild script, check mapping matches reality
 python3 << 'EOF'
@@ -285,15 +296,18 @@ EOF
 ## 📈 Performance Impact
 
 ### Build Time
+
 - Without rebuild: ~15-20 seconds
 - With rebuild: +2-3 seconds (negligible)
 
 ### Memory
+
 - assets.json size: ~2-5 KB
 - Scanned files: ~40-50 assets
 - Python memory: <1 MB
 
 ### Server Performance
+
 - Lookup time: <1ms per request (dict lookup)
 - No performance impact at runtime
 
@@ -313,18 +327,20 @@ EOF
 ## 🚀 Best Practices
 
 ### Do
+
 ✅ Run rebuild script after every build  
 ✅ Check for "DONE" message in build output  
 ✅ Verify redis is running before building  
 ✅ Use the automated script, not manual edits  
-✅ Commit assets.json changes to git  
+✅ Commit assets.json changes to git
 
 ### Don't
+
 ❌ Manually edit assets.json hashes  
 ❌ Delete dist files without updating mapping  
 ❌ Build when redis is down  
 ❌ Use old assets.json after checkout  
-❌ Ignore 404 errors in browser console  
+❌ Ignore 404 errors in browser console
 
 ---
 

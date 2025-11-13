@@ -5,14 +5,17 @@
 All files are in the project root directory:
 
 ### Quick Reference
+
 - **`ASSET_HASH_QUICK_FIX.md`** - Quick 30-second fixes and common commands
 - **`DOCUMENTATION_INDEX.md`** - Navigation guide for all documentation
 
-### Detailed Guides  
+### Detailed Guides
+
 - **`ASSET_HASH_FIX_GUIDE.md`** - Complete step-by-step guide with prevention tips
 - **`ASSET_HASH_TECHNICAL.md`** - Technical deep dive into how the system works
 
 ### Automation
+
 - **`rebuild-assets.sh`** - Automated script to fix everything (EXECUTABLE)
 
 ---
@@ -20,6 +23,7 @@ All files are in the project root directory:
 ## 🚀 Quick Start (Choose One)
 
 ### ⚡ I Have 404 Errors Right Now (2 minutes)
+
 ```bash
 cd /home/ghild/vaibhav/Diigice-ERP
 ./rebuild-assets.sh
@@ -27,6 +31,7 @@ cd /home/ghild/vaibhav/Diigice-ERP
 ```
 
 ### 📖 I Want to Learn First (15 minutes)
+
 ```bash
 # Read quick reference
 cat ASSET_HASH_QUICK_FIX.md
@@ -39,6 +44,7 @@ cat ASSET_HASH_FIX_GUIDE.md
 ```
 
 ### 🔬 I Want to Understand Everything (30 minutes)
+
 ```bash
 # Read in order
 cat DOCUMENTATION_INDEX.md
@@ -55,6 +61,7 @@ cat rebuild-assets.sh
 ## 📋 The Problem You're Solving
 
 **Symptom**: CSS/JS files return 404 errors in browser
+
 ```
 GET /assets/frappe/dist/css/desk.bundle.css HTTP/1.1" 404
 GET /assets/erpnext/dist/js/erpnext.bundle.js HTTP/1.1" 404
@@ -68,41 +75,46 @@ GET /assets/erpnext/dist/js/erpnext.bundle.js HTTP/1.1" 404
 
 ## ✨ What Each File Does
 
-| File | Purpose | When to Use |
-|------|---------|-----------|
-| `ASSET_HASH_QUICK_FIX.md` | Quick reference + commands | Emergency fixing |
+| File                      | Purpose                     | When to Use                |
+| ------------------------- | --------------------------- | -------------------------- |
+| `ASSET_HASH_QUICK_FIX.md` | Quick reference + commands  | Emergency fixing           |
 | `ASSET_HASH_FIX_GUIDE.md` | Complete guide + prevention | Learning & troubleshooting |
-| `ASSET_HASH_TECHNICAL.md` | How it works internally | Deep understanding |
-| `DOCUMENTATION_INDEX.md` | Navigation guide | Finding what you need |
-| `rebuild-assets.sh` | Automated fix script | Running the fix |
+| `ASSET_HASH_TECHNICAL.md` | How it works internally     | Deep understanding         |
+| `DOCUMENTATION_INDEX.md`  | Navigation guide            | Finding what you need      |
+| `rebuild-assets.sh`       | Automated fix script        | Running the fix            |
 
 ---
 
 ## 🎯 Common Tasks
 
 ### Task 1: Fix 404 Errors
+
 ```bash
 ./rebuild-assets.sh
 ```
 
 ### Task 2: Understand the Problem
+
 ```bash
 cat ASSET_HASH_QUICK_FIX.md
 cat ASSET_HASH_FIX_GUIDE.md
 ```
 
 ### Task 3: Learn How It Works
+
 ```bash
 cat ASSET_HASH_TECHNICAL.md
 ```
 
 ### Task 4: Troubleshoot Complex Issues
+
 ```bash
 # See ASSET_HASH_FIX_GUIDE.md → Troubleshooting section
 # See ASSET_HASH_TECHNICAL.md → Debugging section
 ```
 
 ### Task 5: Prevent Future Issues
+
 ```bash
 # Read ASSET_HASH_FIX_GUIDE.md → Prevention Tips section
 ```
@@ -132,13 +144,13 @@ cat ASSET_HASH_TECHNICAL.md
 
 ## ⌚ Time Estimates
 
-| Activity | Time |
-|----------|------|
-| Quick fix only | 2 minutes |
-| Read quick fix guide | 5 minutes |
-| Read full guide | 15 minutes |
-| Read technical details | 25 minutes |
-| Run rebuild script | 3 minutes |
+| Activity                 | Time            |
+| ------------------------ | --------------- |
+| Quick fix only           | 2 minutes       |
+| Read quick fix guide     | 5 minutes       |
+| Read full guide          | 15 minutes      |
+| Read technical details   | 25 minutes      |
+| Run rebuild script       | 3 minutes       |
 | **Total (all of above)** | **~50 minutes** |
 
 ---
@@ -146,16 +158,19 @@ cat ASSET_HASH_TECHNICAL.md
 ## 🎓 Recommended Reading Order
 
 **For Developers:**
+
 1. ASSET_HASH_QUICK_FIX.md (5 min)
 2. ASSET_HASH_FIX_GUIDE.md (10 min)
 3. rebuild-assets.sh (run it)
 
 **For DevOps/CI-CD:**
+
 1. ASSET_HASH_TECHNICAL.md (20 min)
 2. rebuild-assets.sh (read & understand)
 3. Adapt for your pipeline
 
 **For Beginners:**
+
 1. DOCUMENTATION_INDEX.md (overview)
 2. ASSET_HASH_QUICK_FIX.md (quick fix)
 3. ASSET_HASH_FIX_GUIDE.md (full understanding)
@@ -178,10 +193,12 @@ After running the fix, verify:
 ## 🐛 Still Having Issues?
 
 1. **Read troubleshooting sections:**
+
    - ASSET_HASH_QUICK_FIX.md → "If It Still Doesn't Work"
    - ASSET_HASH_FIX_GUIDE.md → "Troubleshooting"
 
 2. **Check technical details:**
+
    - ASSET_HASH_TECHNICAL.md → "Debugging Steps"
 
 3. **Try the nuclear fix:**
@@ -201,16 +218,19 @@ After running the fix, verify:
 **Tip 1:** Bookmark `ASSET_HASH_QUICK_FIX.md` for future reference
 
 **Tip 2:** Create bash alias:
+
 ```bash
 alias fix-assets='cd /home/ghild/vaibhav/Diigice-ERP && ./rebuild-assets.sh'
 ```
 
 **Tip 3:** Run after every `bench build`:
+
 ```bash
 bench build --force && ./rebuild-assets.sh
 ```
 
 **Tip 4:** Keep assets.json in version control:
+
 ```bash
 git add sites/assets/assets.json
 git commit -m "Update asset hashes"
@@ -220,22 +240,23 @@ git commit -m "Update asset hashes"
 
 ## 📞 Quick Help
 
-| Issue | Solution |
-|-------|----------|
-| 404 errors for CSS/JS | Run `./rebuild-assets.sh` |
-| Styling is broken | Hard refresh + run script |
-| JavaScript not working | Check console for errors + run script |
-| Don't understand problem | Read ASSET_HASH_FIX_GUIDE.md |
-| Want to learn more | Read ASSET_HASH_TECHNICAL.md |
-| Need quick commands | Read ASSET_HASH_QUICK_FIX.md |
+| Issue                    | Solution                              |
+| ------------------------ | ------------------------------------- |
+| 404 errors for CSS/JS    | Run `./rebuild-assets.sh`             |
+| Styling is broken        | Hard refresh + run script             |
+| JavaScript not working   | Check console for errors + run script |
+| Don't understand problem | Read ASSET_HASH_FIX_GUIDE.md          |
+| Want to learn more       | Read ASSET_HASH_TECHNICAL.md          |
+| Need quick commands      | Read ASSET_HASH_QUICK_FIX.md          |
 
 ---
 
 ## 🎉 Success Indicators
 
 You'll know it worked when:
+
 - ✅ Browser console has NO 404 errors
-- ✅ CSS loads and renders correctly  
+- ✅ CSS loads and renders correctly
 - ✅ JavaScript functionality works
 - ✅ All assets show status 200
 - ✅ Pages load without styling issues
@@ -266,6 +287,7 @@ You'll know it worked when:
 ## 📝 File Descriptions
 
 ### ASSET_HASH_QUICK_FIX.md (Target: 5 min read)
+
 - Problem recognition checklist
 - Quick fixes (30 seconds to 2 minutes)
 - Common commands reference table
@@ -273,15 +295,17 @@ You'll know it worked when:
 - Best for: Emergency fixes & quick reference
 
 ### ASSET_HASH_FIX_GUIDE.md (Target: 15 min read)
+
 - Complete problem overview
 - Root cause analysis
-- 5-step solution process  
+- 5-step solution process
 - Prevention tips & best practices
 - Helper script guide
 - Troubleshooting section
 - Best for: Full understanding & learning
 
 ### ASSET_HASH_TECHNICAL.md (Target: 25 min read)
+
 - How build process works (flowchart)
 - Asset mapping system (detailed)
 - Runtime resolution flow
@@ -291,6 +315,7 @@ You'll know it worked when:
 - Best for: Deep technical knowledge
 
 ### DOCUMENTATION_INDEX.md (Target: 5 min read)
+
 - Navigation guide for all docs
 - When to use each file
 - Reading recommendations
@@ -299,6 +324,7 @@ You'll know it worked when:
 - Best for: Finding what you need
 
 ### README_ASSETS.md (This file - Target: 5 min read)
+
 - Quick start options
 - File purpose summary
 - Verification checklist
@@ -306,6 +332,7 @@ You'll know it worked when:
 - Best for: Overview & getting started
 
 ### rebuild-assets.sh (Automated Script)
+
 - Fully automated fix
 - 5-step process
 - Pretty console output
@@ -318,6 +345,7 @@ You'll know it worked when:
 ## 🎯 The Goal
 
 After reading these docs and running the script, you'll:
+
 - ✅ Know what the asset hash system is
 - ✅ Understand why 404s happen
 - ✅ Be able to fix it in 2 minutes

@@ -14,9 +14,11 @@ GET /assets/erpnext/dist/js/erpnext.bundle.O4MMUXVO.js HTTP/1.1" 404
 The problem occurs because:
 
 1. **Build Process**: When you run `bench build`, it compiles all CSS/JS files and generates **unique hash values** in the filenames:
+
    - Example: `website.bundle.22CZNFEN.css` (hash: `22CZNFEN`)
 
 2. **Asset Mapping File**: The `sites/assets/assets.json` file maps logical asset names to their actual file paths with hashes:
+
    ```json
    {
      "website.bundle.css": "/assets/frappe/dist/css/website.bundle.22CZNFEN.css"
@@ -38,6 +40,7 @@ The problem occurs because:
 ### Step 1: Identify the Problem
 
 Check the logs when accessing the app:
+
 ```bash
 # Look for 404 errors in bench start output
 curl http://127.0.0.1:8001
@@ -50,7 +53,7 @@ curl http://127.0.0.1:8001
 # List actual frappe CSS files
 ls /home/ghild/vaibhav/Diigice-ERP/sites/assets/frappe/dist/css/ | grep -v map | grep -v rtl
 
-# List actual frappe JS files  
+# List actual frappe JS files
 ls /home/ghild/vaibhav/Diigice-ERP/sites/assets/frappe/dist/js/ | grep -v map
 
 # List actual erpnext CSS files
@@ -61,6 +64,7 @@ ls /home/ghild/vaibhav/Diigice-ERP/sites/assets/erpnext/dist/js/ | grep -v map
 ```
 
 Example output:
+
 ```
 website.bundle.22CZNFEN.css  ← This is the ACTUAL file
 desk.bundle.6ZHVT5SU.css
@@ -141,6 +145,7 @@ bench start
 ### Step 6: Verify the Fix
 
 Check the browser logs - you should see **200 responses** instead of 404:
+
 ```
 GET /assets/frappe/dist/css/website.bundle.22CZNFEN.css HTTP/1.1" 200 ✅
 GET /assets/erpnext/dist/css/erpnext.bundle.RZHWBP2I.css HTTP/1.1" 200 ✅
@@ -153,20 +158,23 @@ GET /assets/erpnext/dist/css/erpnext.bundle.RZHWBP2I.css HTTP/1.1" 200 ✅
 If you prefer to manually fix it:
 
 1. **Get one actual filename**:
+
    ```bash
    ls /home/ghild/vaibhav/Diigice-ERP/sites/assets/frappe/dist/css/ | head -1
    # Output: desk.bundle.6ZHVT5SU.css
    ```
 
 2. **Extract the hash** from the filename:
+
    - Filename: `desk.bundle.6ZHVT5SU.css`
    - Hash: `6ZHVT5SU`
 
 3. **Update assets.json manually**:
+
    ```bash
    # Open the file
    nano /home/ghild/vaibhav/Diigice-ERP/sites/assets/assets.json
-   
+
    # Find and replace old hashes with new ones
    # Find:    "desk.bundle.css": "/assets/frappe/dist/css/desk.bundle.ZNEBQ3KO.css"
    # Replace: "desk.bundle.css": "/assets/frappe/dist/css/desk.bundle.6ZHVT5SU.css"
@@ -179,6 +187,7 @@ If you prefer to manually fix it:
 To avoid this problem in the future:
 
 ### 1. **Always Rebuild After Code Changes**
+
 ```bash
 bench stop
 rm -rf sites/assets/frappe/dist sites/assets/erpnext/dist
@@ -187,19 +196,24 @@ bench start
 ```
 
 ### 2. **Keep Redis Running**
+
 The build process needs Redis to update `assets.json`. If Redis is not running:
+
 ```bash
 # Make sure Redis is available before building
 redis-cli ping  # Should return "PONG"
 ```
 
 ### 3. **Check Build Completion**
+
 Always wait for the build to complete - watch for this message:
+
 ```
  DONE  Total Build Time: XX.XXXs
 ```
 
 ### 4. **Create a Helper Script**
+
 Save this as `rebuild.sh` in your project root:
 
 ```bash
@@ -255,15 +269,17 @@ bench start
 ```
 
 Usage:
+
 ```bash
 chmod +x rebuild.sh
 ./rebuild.sh
 ```
 
 ### 5. **Monitor for Issues**
+
 ```bash
 # In a separate terminal, watch for 404s
-while true; do 
+while true; do
   sleep 5
   curl -s http://127.0.0.1:8001 2>&1 | grep -i "404\|error" && echo "⚠️  Error found!" || echo "✅ OK"
 done
@@ -273,16 +289,16 @@ done
 
 ## Quick Reference Cheat Sheet
 
-| Issue | Command |
-|-------|---------|
-| Check actual files | `ls sites/assets/frappe/dist/css/ \| grep -v map` |
-| Regenerate assets.json | `python3 /tmp/generate_assets.py` |
-| Stop server | `Ctrl+C` or `pkill -f "bench start"` |
-| Clear dist folders | `rm -rf sites/assets/frappe/dist sites/assets/erpnext/dist` |
-| Rebuild | `bench build --force` |
-| Start server | `bench start` |
-| Check asset loads | `curl http://127.0.0.1:8001` |
-| View assets.json | `cat sites/assets/assets.json` |
+| Issue                  | Command                                                     |
+| ---------------------- | ----------------------------------------------------------- |
+| Check actual files     | `ls sites/assets/frappe/dist/css/ \| grep -v map`           |
+| Regenerate assets.json | `python3 /tmp/generate_assets.py`                           |
+| Stop server            | `Ctrl+C` or `pkill -f "bench start"`                        |
+| Clear dist folders     | `rm -rf sites/assets/frappe/dist sites/assets/erpnext/dist` |
+| Rebuild                | `bench build --force`                                       |
+| Start server           | `bench start`                                               |
+| Check asset loads      | `curl http://127.0.0.1:8001`                                |
+| View assets.json       | `cat sites/assets/assets.json`                              |
 
 ---
 
@@ -290,11 +306,11 @@ done
 
 ```json
 {
-    "website.bundle.css": "/assets/frappe/dist/css/website.bundle.22CZNFEN.css",
-    //  ↑ Logical name (used by app)     ↑ Actual file path with hash
-    
-    "desk.bundle.js": "/assets/frappe/dist/js/desk.bundle.B6FRELQE.js",
-    "erpnext.bundle.css": "/assets/erpnext/dist/css/erpnext.bundle.RZHWBP2I.css"
+  "website.bundle.css": "/assets/frappe/dist/css/website.bundle.22CZNFEN.css",
+  //  ↑ Logical name (used by app)     ↑ Actual file path with hash
+
+  "desk.bundle.js": "/assets/frappe/dist/js/desk.bundle.B6FRELQE.js",
+  "erpnext.bundle.css": "/assets/erpnext/dist/css/erpnext.bundle.RZHWBP2I.css"
 }
 ```
 
@@ -304,18 +320,19 @@ done
 
 ## Troubleshooting
 
-| Problem | Solution |
-|---------|----------|
-| Still getting 404 after fix | Ctrl+F5 hard refresh in browser, clear cache |
-| assets.json keeps reverting | Stop Redis, run auto-generation script, restart |
-| Build fails | Check: `bench setup requirements` first |
-| Files not in dist folder | Build didn't complete - check for errors in output |
+| Problem                     | Solution                                           |
+| --------------------------- | -------------------------------------------------- |
+| Still getting 404 after fix | Ctrl+F5 hard refresh in browser, clear cache       |
+| assets.json keeps reverting | Stop Redis, run auto-generation script, restart    |
+| Build fails                 | Check: `bench setup requirements` first            |
+| Files not in dist folder    | Build didn't complete - check for errors in output |
 
 ---
 
 ## When to Use This Guide
 
 ✅ Use this guide when you see:
+
 - CSS/JS files returning 404 in browser console
 - Styling breaks or disappears
 - JavaScript bundles not loading

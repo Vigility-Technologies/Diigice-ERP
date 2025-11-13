@@ -22,22 +22,26 @@ cd /home/ghild/vaibhav/Diigice-ERP
 If the automated script doesn't work or you want to do it manually:
 
 ### Step 1: Navigate to Project Root
+
 ```bash
 cd /home/ghild/vaibhav/Diigice-ERP
 ```
 
 ### Step 2: Clean Old Asset Files
+
 ```bash
 rm -rf sites/assets/frappe/dist
 rm -rf sites/assets/erpnext/dist
 ```
 
 ### Step 3: Rebuild Assets
+
 ```bash
 bench build --force
 ```
 
 ### Step 4: Regenerate Asset Mapping
+
 ```bash
 python3 << 'EOF'
 import os
@@ -86,6 +90,7 @@ EOF
 ```
 
 ### Step 5: Restart the Server
+
 ```bash
 bench start
 ```
@@ -97,6 +102,7 @@ bench start
 After running the fix, verify it worked:
 
 ### Check 1: Verify assets.json exists
+
 ```bash
 ls -lh sites/assets/assets.json
 ```
@@ -104,6 +110,7 @@ ls -lh sites/assets/assets.json
 Expected output: Shows file size (should be a few KB)
 
 ### Check 2: Verify assets are in dist folders
+
 ```bash
 ls -la sites/assets/frappe/dist/css/ | head -5
 ls -la sites/assets/frappe/dist/js/ | head -5
@@ -112,6 +119,7 @@ ls -la sites/assets/frappe/dist/js/ | head -5
 Expected output: Shows CSS and JS files with hash names
 
 ### Check 3: Open browser and check logs
+
 1. Open: `http://localhost:8000`
 2. Press `F12` to open Developer Tools
 3. Go to **Console** tab
@@ -125,6 +133,7 @@ Expected output: Shows CSS and JS files with hash names
 ### If rebuild script fails:
 
 **Check Redis is running:**
+
 ```bash
 redis-cli -p 13000 ping
 redis-cli -p 13001 ping
@@ -133,11 +142,13 @@ redis-cli -p 13001 ping
 Expected output: `PONG` for both
 
 **Check bench status:**
+
 ```bash
 bench status
 ```
 
 **Clear cache and try again:**
+
 ```bash
 rm -rf sites/assets/frappe/dist sites/assets/erpnext/dist
 bench clear-cache
@@ -145,6 +156,7 @@ bench build --force
 ```
 
 **Check if Python can scan directories:**
+
 ```bash
 python3 << 'EOF'
 import os
@@ -157,24 +169,25 @@ EOF
 
 ## 📊 QUICK COMMAND CHEAT SHEET
 
-| Action | Command |
-|--------|---------|
-| **Fix everything** | `./rebuild-assets.sh` |
-| **Just rebuild assets** | `bench build --force` |
-| **Clean old files** | `rm -rf sites/assets/frappe/dist sites/assets/erpnext/dist` |
-| **Regenerate mapping** | See "Manual Steps > Step 4" above |
-| **Start server** | `bench start` |
-| **Check Redis** | `redis-cli -p 13000 ping` |
-| **Check bench status** | `bench status` |
-| **View logs** | `tail -f frappe.log` |
-| **Clear cache** | `bench clear-cache` |
-| **List all assets** | `cat sites/assets/assets.json` |
+| Action                  | Command                                                     |
+| ----------------------- | ----------------------------------------------------------- |
+| **Fix everything**      | `./rebuild-assets.sh`                                       |
+| **Just rebuild assets** | `bench build --force`                                       |
+| **Clean old files**     | `rm -rf sites/assets/frappe/dist sites/assets/erpnext/dist` |
+| **Regenerate mapping**  | See "Manual Steps > Step 4" above                           |
+| **Start server**        | `bench start`                                               |
+| **Check Redis**         | `redis-cli -p 13000 ping`                                   |
+| **Check bench status**  | `bench status`                                              |
+| **View logs**           | `tail -f frappe.log`                                        |
+| **Clear cache**         | `bench clear-cache`                                         |
+| **List all assets**     | `cat sites/assets/assets.json`                              |
 
 ---
 
 ## 🚀 COMPLETE WORKFLOW
 
 **First Time Fix (Complete Rebuild):**
+
 ```bash
 cd /home/ghild/vaibhav/Diigice-ERP
 rm -rf sites/assets/frappe/dist sites/assets/erpnext/dist
@@ -184,6 +197,7 @@ bench start
 ```
 
 **Future Quick Fixes:**
+
 ```bash
 cd /home/ghild/vaibhav/Diigice-ERP
 ./rebuild-assets.sh
@@ -195,11 +209,13 @@ cd /home/ghild/vaibhav/Diigice-ERP
 ## 📍 COMMON ISSUES & SOLUTIONS
 
 **Issue: "404 CSS/JS files not found"**
+
 ```bash
 # Run the complete workflow above
 ```
 
 **Issue: "Cannot connect to redis_cache"**
+
 ```bash
 # Redis service isn't running - start it
 redis-server /home/ghild/vaibhav/Diigice-ERP/config/redis_cache.conf
@@ -207,6 +223,7 @@ redis-server /home/ghild/vaibhav/Diigice-ERP/config/redis_queue.conf
 ```
 
 **Issue: "assets.json corrupted or missing"**
+
 ```bash
 # Delete it and regenerate
 rm sites/assets/assets.json
@@ -214,6 +231,7 @@ rm sites/assets/assets.json
 ```
 
 **Issue: "Bench build hangs or fails"**
+
 ```bash
 # Try with fresh clean
 rm -rf sites/assets/frappe/dist sites/assets/erpnext/dist
@@ -236,6 +254,7 @@ bench build --force
 ## 📞 NEED HELP?
 
 Check these files in order:
+
 1. `ASSET_HASH_QUICK_FIX.md` - Quick reference
 2. `ASSET_HASH_FIX_GUIDE.md` - Step-by-step guide
 3. `ASSET_HASH_TECHNICAL.md` - Deep technical explanation
