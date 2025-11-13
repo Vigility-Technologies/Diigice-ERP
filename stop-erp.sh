@@ -16,6 +16,8 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 # Configuration
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 PORTS=(8001 13001 11001)
 
 # Step 1: Graceful stop
@@ -86,5 +88,5 @@ for PORT in "${PORTS[@]}"; do
 done
 echo ""
 echo -e "${YELLOW}You can now safely start Bench again with:${NC}"
-echo -e "${GREEN}  ./start-erp.sh${NC}"
+echo -e "${GREEN}  $SCRIPT_DIR/start-erp.sh${NC}"
 echo ""

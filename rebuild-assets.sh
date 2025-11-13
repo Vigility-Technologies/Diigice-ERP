@@ -19,7 +19,8 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 ASSETS_DIR="$PROJECT_ROOT/sites/assets"
 
 echo -e "${BLUE}ℹ️  Project Root: $PROJECT_ROOT${NC}"
@@ -49,6 +50,7 @@ echo ""
 # Step 4: Generate assets.json
 echo -e "${YELLOW}🔄 Step 4: Generating assets.json...${NC}"
 
+export PROJECT_ROOT
 python3 << 'PYTHON_END'
 import os
 import json
@@ -56,9 +58,10 @@ import sys
 
 try:
     assets = {}
+    project_root = os.environ.get('PROJECT_ROOT', '.')
     
     # Get all frappe JS files
-    frappe_js = os.path.join(os.environ.get('PROJECT_ROOT', '.'), 'sites/assets/frappe/dist/js')
+    frappe_js = os.path.join(project_root, 'sites/assets/frappe/dist/js')
     if os.path.exists(frappe_js):
         for f in os.listdir(frappe_js):
             if f.endswith('.js') and not f.endswith('.map'):
@@ -66,7 +69,7 @@ try:
                 assets[name] = f"/assets/frappe/dist/js/{f}"
     
     # Get all frappe CSS files
-    frappe_css = os.path.join(os.environ.get('PROJECT_ROOT', '.'), 'sites/assets/frappe/dist/css')
+    frappe_css = os.path.join(project_root, 'sites/assets/frappe/dist/css')
     if os.path.exists(frappe_css):
         for f in os.listdir(frappe_css):
             if f.endswith('.css') and not f.endswith('.map') and '-rtl' not in f:
@@ -74,7 +77,7 @@ try:
                 assets[name] = f"/assets/frappe/dist/css/{f}"
     
     # Get all erpnext JS files
-    erpnext_js = os.path.join(os.environ.get('PROJECT_ROOT', '.'), 'sites/assets/erpnext/dist/js')
+    erpnext_js = os.path.join(project_root, 'sites/assets/erpnext/dist/js')
     if os.path.exists(erpnext_js):
         for f in os.listdir(erpnext_js):
             if f.endswith('.js') and not f.endswith('.map'):
@@ -82,7 +85,7 @@ try:
                 assets[name] = f"/assets/erpnext/dist/js/{f}"
     
     # Get all erpnext CSS files
-    erpnext_css = os.path.join(os.environ.get('PROJECT_ROOT', '.'), 'sites/assets/erpnext/dist/css')
+    erpnext_css = os.path.join(project_root, 'sites/assets/erpnext/dist/css')
     if os.path.exists(erpnext_css):
         for f in os.listdir(erpnext_css):
             if f.endswith('.css') and not f.endswith('.map') and '-rtl' not in f:
@@ -90,7 +93,7 @@ try:
                 assets[name] = f"/assets/erpnext/dist/css/{f}"
     
     # Write the JSON file
-    assets_json_path = os.path.join(os.environ.get('PROJECT_ROOT', '.'), 'sites/assets/assets.json')
+    assets_json_path = os.path.join(project_root, 'sites/assets/assets.json')
     with open(assets_json_path, 'w') as f:
         json.dump(assets, f, indent=4, sort_keys=True)
     

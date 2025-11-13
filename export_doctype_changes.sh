@@ -69,9 +69,14 @@ if [[ ${#DOCTYPES[@]} -eq 0 ]]; then
   exit 1
 fi
 
+# Get project root (assumes script is in scripts/ folder, or adjust accordingly)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
 # Process each doctype
 for d in "${DOCTYPES[@]}"; do
   folder_name=$(echo "$d" | tr '[:upper:]' '[:lower:]' | tr ' ' '_' )
-  mkdir -p apps/erpnext/erpnext/$MODULE/doctype/$folder_name
-  bench --site erp-next.localhost export-json "$d" apps/erpnext/erpnext/$MODULE/doctype/$folder_name/$folder_name.json
+  mkdir -p "$PROJECT_ROOT/apps/erpnext/erpnext/$MODULE/doctype/$folder_name"
+  cd "$PROJECT_ROOT"
+  bench --site erp-next.localhost export-json "$d" "$PROJECT_ROOT/apps/erpnext/erpnext/$MODULE/doctype/$folder_name/$folder_name.json"
 done

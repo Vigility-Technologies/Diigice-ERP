@@ -12,8 +12,12 @@ echo "║        Asset Hash Mismatch - Automatic Fix Script         ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
 
+# Get project root (assumes script is in scripts/ folder, or adjust accordingly)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
 # Navigate to project directory
-cd /home/ghild/testing/Diigice-ERP
+cd "$PROJECT_ROOT"
 
 echo "📍 Working Directory: $(pwd)"
 echo ""
@@ -45,15 +49,15 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "Step 2️⃣  CHECKING PROCFILE..."
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-if grep -q "^watch: bench watch" Procfile; then
+if grep -q "^watch: bench watch" "$PROJECT_ROOT/Procfile"; then
     echo "⚠️  Watch process is ENABLED!"
     echo "🔧 Disabling watch process..."
     
     # Create backup
-    cp Procfile Procfile.backup.$(date +%s)
+    cp "$PROJECT_ROOT/Procfile" "$PROJECT_ROOT/Procfile.backup.$(date +%s)"
     
     # Disable watch
-    sed -i 's/^watch: bench watch/# watch: bench watch\n# DISABLED: Prevents asset hash mismatches/' Procfile
+    sed -i 's/^watch: bench watch/# watch: bench watch\n# DISABLED: Prevents asset hash mismatches/' "$PROJECT_ROOT/Procfile"
     
     echo "✅ Watch process disabled"
 else
@@ -67,16 +71,16 @@ echo "Step 3️⃣  CLEANING OLD DIST FILES..."
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 echo "Removing: sites/assets/frappe/dist"
-rm -rf sites/assets/frappe/dist 2>/dev/null || true
+rm -rf "$PROJECT_ROOT/sites/assets/frappe/dist" 2>/dev/null || true
 
 echo "Removing: sites/assets/erpnext/dist"
-rm -rf sites/assets/erpnext/dist 2>/dev/null || true
+rm -rf "$PROJECT_ROOT/sites/assets/erpnext/dist" 2>/dev/null || true
 
 echo "Removing: sites/assets/assets.json"
-rm -f sites/assets/assets.json 2>/dev/null || true
+rm -f "$PROJECT_ROOT/sites/assets/assets.json" 2>/dev/null || true
 
 echo "Removing: sites/assets/assets-rtl.json"
-rm -f sites/assets/assets-rtl.json 2>/dev/null || true
+rm -f "$PROJECT_ROOT/sites/assets/assets-rtl.json" 2>/dev/null || true
 
 echo "✅ Old files cleaned"
 echo ""
@@ -88,7 +92,7 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "⏳ This may take 20-30 seconds..."
 echo ""
 
-if bench build --force > /tmp/bench-build.log 2>&1; then
+if cd "$PROJECT_ROOT" && bench build --force > /tmp/bench-build.log 2>&1; then
     # Extract build time
     BUILD_TIME=$(grep "Total Build Time" /tmp/bench-build.log | tail -1 || echo "unknown")
     echo "✅ Assets built successfully"
@@ -106,8 +110,8 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "Step 5️⃣  GENERATING ASSETS.JSON..."
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-if ./rebuild-assets.sh > /tmp/rebuild-assets.log 2>&1; then
-    ASSET_COUNT=$(grep -c '":' sites/assets/assets.json 2>/dev/null || echo "?")
+if "$SCRIPT_DIR/rebuild-assets.sh" > /tmp/rebuild-assets.log 2>&1; then
+    ASSET_COUNT=$(grep -c '":' "$PROJECT_ROOT/sites/assets/assets.json" 2>/dev/null || echo "?")
     echo "✅ assets.json generated successfully"
     echo "   Total assets mapped: $ASSET_COUNT"
 else
@@ -124,7 +128,7 @@ echo "Step 6️⃣  VERIFYING FIXES..."
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 # Check assets.json exists
-if [ -f sites/assets/assets.json ]; then
+if [ -f "$PROJECT_ROOT/sites/assets/assets.json" ]; then
     echo "✅ assets.json exists"
 else
     echo "❌ assets.json NOT found!"
@@ -132,14 +136,14 @@ else
 fi
 
 # Check dist directories exist
-if [ -d sites/assets/frappe/dist/css ] && [ -d sites/assets/frappe/dist/js ]; then
+if [ -d "$PROJECT_ROOT/sites/assets/frappe/dist/css" ] && [ -d "$PROJECT_ROOT/sites/assets/frappe/dist/js" ]; then
     echo "✅ Frappe dist directories created"
 else
     echo "❌ Frappe dist directories missing!"
     exit 1
 fi
 
-if [ -d sites/assets/erpnext/dist/css ] && [ -d sites/assets/erpnext/dist/js ]; then
+if [ -d "$PROJECT_ROOT/sites/assets/erpnext/dist/css" ] && [ -d "$PROJECT_ROOT/sites/assets/erpnext/dist/js" ]; then
     echo "✅ ERPNext dist directories created"
 else
     echo "❌ ERPNext dist directories missing!"
@@ -147,8 +151,8 @@ else
 fi
 
 # Verify hashes match
-DESK_JSON_HASH=$(grep "desk.bundle.css" sites/assets/assets.json | grep -o '[A-Z0-9]\{8\}' | head -1 || echo "NOT_FOUND")
-DESK_FILE_HASH=$(ls sites/assets/frappe/dist/css/desk.bundle*.css 2>/dev/null | head -1 | grep -o '[A-Z0-9]\{8\}' | head -1 || echo "NOT_FOUND")
+DESK_JSON_HASH=$(grep "desk.bundle.css" "$PROJECT_ROOT/sites/assets/assets.json" | grep -o '[A-Z0-9]\{8\}' | head -1 || echo "NOT_FOUND")
+DESK_FILE_HASH=$(ls "$PROJECT_ROOT/sites/assets/frappe/dist/css/desk.bundle"*.css 2>/dev/null | head -1 | grep -o '[A-Z0-9]\{8\}' | head -1 || echo "NOT_FOUND")
 
 if [ "$DESK_JSON_HASH" == "$DESK_FILE_HASH" ]; then
     echo "✅ Hash verification: PASSED"
@@ -178,7 +182,7 @@ echo "🚀 NEXT STEP: Start the server"
 echo ""
 echo "   Run this command:"
 echo "   ──────────────────────────────────────────"
-echo "   cd /home/ghild/testing/Diigice-ERP && bench start"
+echo "   cd $PROJECT_ROOT && bench start"
 echo "   ──────────────────────────────────────────"
 echo ""
 echo "🌐 Then open browser:"
